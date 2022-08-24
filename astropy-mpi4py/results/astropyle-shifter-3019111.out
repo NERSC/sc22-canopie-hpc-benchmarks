@@ -1,0 +1,6 @@
+running astropyle shifter nodes 256
+first run (no cache)
+/usr/local/lib/python3.6/dist-packages/astropy 16384 31.4204740524292
+second run (cached)
+/usr/local/lib/python3.6/dist-packages/astropy 16384 26.200040340423584
+done

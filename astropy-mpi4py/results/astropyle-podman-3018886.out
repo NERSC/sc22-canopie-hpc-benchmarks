@@ -1,0 +1,12 @@
+Doing srun
+srun: Warning: can't honor --ntasks-per-node set to 64 which doesn't match the requested tasks 256 with the number of requested nodes 256. Ignoring --ntasks-per-node.
+Set PATH PATH=/tmp/75313_hpc/podman//bin:$PATH
+/tmp/75313_hpc/podman/bin/podman
+running astropyle podman nodes 256
+first run
+/usr/local/lib/python3.6/dist-packages/astropy 16384 37.562938928604126
+Time: 0:39.49
+second run
+/usr/local/lib/python3.6/dist-packages/astropy 16384 33.88095712661743
+Time: 0:36.00
+done

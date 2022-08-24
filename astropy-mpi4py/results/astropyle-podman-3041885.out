@@ -1,0 +1,11 @@
+Doing srun
+Set PATH PATH=/tmp/75313_hpc/podman//bin:$PATH
+/tmp/75313_hpc/podman/bin/podman
+running astropyle podman nodes 32
+first run
+/usr/local/lib/python3.6/dist-packages/astropy 2048 13.067346096038818
+Time: 0:14.80
+second run
+/usr/local/lib/python3.6/dist-packages/astropy 2048 13.743001461029053
+Time: 0:15.61
+done

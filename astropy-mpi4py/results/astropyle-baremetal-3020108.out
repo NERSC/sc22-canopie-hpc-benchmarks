@@ -1,0 +1,6 @@
+running astropyle baremetal nodes 64
+first run (no cache)
+/global/common/shared/das/stephey/astropyle/env/lib/python3.9/site-packages/astropy 4096 10.851423501968384
+second run (cached)
+/global/common/shared/das/stephey/astropyle/env/lib/python3.9/site-packages/astropy 4096 9.583266019821167
+done
