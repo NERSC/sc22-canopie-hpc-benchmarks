@@ -1,0 +1,183 @@
+Doing srun
+Set PATH PATH=/tmp/75313_hpc/podman//bin:$PATH
+/tmp/75313_hpc/podman/bin/podman
+time srun podman-mpi-exec /opt/LAMMPS_INSTALL/bin/lmp -pk kokkos newton on neigh half -k on g 4 -sf kk -in in.run -log log.28
+first run
+LAMMPS (24 Mar 2022)
+KOKKOS mode is enabled (src/KOKKOS/kokkos.cpp:105)
+  will use up to 4 GPU(s) per node
+WARNING: Detected MPICH. Disabling GPU-aware MPI (src/KOKKOS/kokkos.cpp:317)
+  using 1 OpenMP thread(s) per MPI task
+Reading data file ...
+  orthogonal box = (-0.215444 -0.215444 -0.215444) to (50.6907 50.6907 50.6907)
+  8 by 8 by 16 MPI processor grid
+  reading atoms ...
+  46656 atoms
+  read_data CPU = 0.062 seconds
+Replicating atoms ...
+  orthogonal box = (-0.215444 -0.215444 -0.215444) to (1425.1566 1425.1566 1425.1566)
+  8 by 8 by 16 MPI processor grid
+  1024192512 atoms
+  replicate CPU = 24.664 seconds
+SNAP Element = C, Radius 0.5, Weight 1
+SNAP keyword rcutfac 2.7
+SNAP keyword twojmax 8
+SNAP keyword rfac0 0.99363
+SNAP keyword rmin0 0.0
+SNAP keyword bzeroflag 0
+SNAP keyword quadraticflag 1
+SNAP keyword chunksize 16384
+SNAP Element = C, Radius 0.5, Weight 1
+SNAP keyword rcutfac 2.7
+SNAP keyword twojmax 8
+SNAP keyword rfac0 0.99363
+SNAP keyword rmin0 0.0
+SNAP keyword bzeroflag 0
+SNAP keyword quadraticflag 1
+SNAP keyword chunksize 16384
+Neighbor list info ...
+  update every 1 steps, delay 10 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 4.7
+  ghost atom cutoff = 4.7
+  binsize = 4.7, bins = 304 304 304
+  2 neighbor lists, perpetual/occasional/extra = 2 0 0
+  (1) pair zbl, perpetual, half/full from (2)
+      attributes: half, newton on, kokkos_device
+      pair build: halffull/newton/kk/device
+      stencil: none
+      bin: none
+  (2) pair snap, perpetual
+      attributes: full, newton on, kokkos_device
+      pair build: full/bin/kk/device
+      stencil: full/bin/3d
+      bin: kk/device
+Setting up Verlet run ...
+  Unit style    : metal
+  Current step  : 0
+  Time step     : 0.0002
+Per MPI rank memory allocation (min/avg/max) = 442 | 442 | 442.1 Mbytes
+   Step          Temp          PotEng         Press           CPU      
+         0   4600          -2.6552349e+09  10620308       0            
+       200   3004.6472     -2.241047e+09   10427369       131.49771    
+Loop time of 131.498 on 1024 procs for 200 steps with 1024192512 atoms
+
+Performance: 0.026 ns/day, 913.179 hours/ns, 1.521 timesteps/s
+99.9% CPU use with 1024 MPI tasks x 1 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 125.6      | 126.85     | 127.42     |   2.0 | 96.46
+Neigh   | 0.020102   | 0.025501   | 0.038218   |   2.0 |  0.02
+Comm    | 3.0157     | 3.7047     | 4.8199     |  13.1 |  2.82
+Output  | 0.00029435 | 0.016976   | 0.021782   |   2.0 |  0.01
+Modify  | 0.44325    | 0.4553     | 0.47286    |   0.6 |  0.35
+Other   |            | 0.4477     |            |       |  0.34
+
+Nlocal:    1.00019e+06 ave 1.00086e+06 max      999743 min
+Histogram: 30 225 132 119 253 96 38 47 60 24
+Nghost:         225291 ave      225850 max      224745 min
+Histogram: 11 59 140 143 169 164 167 103 59 9
+Neighs:    7.56587e+07 ave 7.57182e+07 max   7.561e+07 min
+Histogram: 44 154 156 45 154 254 85 12 77 43
+FullNghs:  1.51317e+08 ave 1.51431e+08 max 1.51223e+08 min
+Histogram: 35 154 162 52 144 244 97 22 75 39
+
+Total # of neighbors = 1.5494906e+11
+Ave neighs/atom = 151.289
+Neighbor list builds = 2
+Dangerous builds = 0
+Total wall time: 0:02:38
+0.09user 0.16system 11:41.79elapsed 0%CPU (0avgtext+0avgdata 16368maxresident)k
+8inputs+8outputs (0major+2963minor)pagefaults 0swaps
+second run
+LAMMPS (24 Mar 2022)
+KOKKOS mode is enabled (src/KOKKOS/kokkos.cpp:105)
+  will use up to 4 GPU(s) per node
+WARNING: Detected MPICH. Disabling GPU-aware MPI (src/KOKKOS/kokkos.cpp:317)
+  using 1 OpenMP thread(s) per MPI task
+Reading data file ...
+  orthogonal box = (-0.215444 -0.215444 -0.215444) to (50.6907 50.6907 50.6907)
+  8 by 8 by 16 MPI processor grid
+  reading atoms ...
+  46656 atoms
+  read_data CPU = 0.067 seconds
+Replicating atoms ...
+  orthogonal box = (-0.215444 -0.215444 -0.215444) to (1425.1566 1425.1566 1425.1566)
+  8 by 8 by 16 MPI processor grid
+  1024192512 atoms
+  replicate CPU = 16.972 seconds
+SNAP Element = C, Radius 0.5, Weight 1
+SNAP keyword rcutfac 2.7
+SNAP keyword twojmax 8
+SNAP keyword rfac0 0.99363
+SNAP keyword rmin0 0.0
+SNAP keyword bzeroflag 0
+SNAP keyword quadraticflag 1
+SNAP keyword chunksize 16384
+SNAP Element = C, Radius 0.5, Weight 1
+SNAP keyword rcutfac 2.7
+SNAP keyword twojmax 8
+SNAP keyword rfac0 0.99363
+SNAP keyword rmin0 0.0
+SNAP keyword bzeroflag 0
+SNAP keyword quadraticflag 1
+SNAP keyword chunksize 16384
+Neighbor list info ...
+  update every 1 steps, delay 10 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 4.7
+  ghost atom cutoff = 4.7
+  binsize = 4.7, bins = 304 304 304
+  2 neighbor lists, perpetual/occasional/extra = 2 0 0
+  (1) pair zbl, perpetual, half/full from (2)
+      attributes: half, newton on, kokkos_device
+      pair build: halffull/newton/kk/device
+      stencil: none
+      bin: none
+  (2) pair snap, perpetual
+      attributes: full, newton on, kokkos_device
+      pair build: full/bin/kk/device
+      stencil: full/bin/3d
+      bin: kk/device
+Setting up Verlet run ...
+  Unit style    : metal
+  Current step  : 0
+  Time step     : 0.0002
+Per MPI rank memory allocation (min/avg/max) = 442 | 442 | 442.1 Mbytes
+   Step          Temp          PotEng         Press           CPU      
+         0   4600          -2.6552349e+09  10620308       0            
+       200   3004.6999     -2.2410413e+09  10427353       131.37465    
+Loop time of 131.375 on 1024 procs for 200 steps with 1024192512 atoms
+
+Performance: 0.026 ns/day, 912.325 hours/ns, 1.522 timesteps/s
+99.9% CPU use with 1024 MPI tasks x 1 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 125.96     | 126.86     | 127.43     |   2.0 | 96.56
+Neigh   | 0.020129   | 0.025354   | 0.036656   |   1.8 |  0.02
+Comm    | 2.849      | 3.5248     | 4.6584     |  14.4 |  2.68
+Output  | 0.0003003  | 0.010634   | 0.013422   |   1.6 |  0.01
+Modify  | 0.44477    | 0.45535    | 0.46897    |   0.6 |  0.35
+Other   |            | 0.5026     |            |       |  0.38
+
+Nlocal:    1.00019e+06 ave 1.00084e+06 max      999714 min
+Histogram: 9 182 188 84 262 113 50 38 60 38
+Nghost:         225294 ave      225827 max      224817 min
+Histogram: 38 88 141 134 145 149 158 102 55 14
+Neighs:    7.56591e+07 ave 7.57204e+07 max 7.56056e+07 min
+Histogram: 14 115 194 67 134 265 106 10 77 42
+FullNghs:  1.51318e+08 ave 1.51433e+08 max  1.5122e+08 min
+Histogram: 21 141 176 53 144 243 113 18 73 42
+
+Total # of neighbors = 1.5494977e+11
+Ave neighs/atom = 151.2897
+Neighbor list builds = 2
+Dangerous builds = 0
+Total wall time: 0:02:30
+0.06user 0.19system 2:44.85elapsed 0%CPU (0avgtext+0avgdata 16296maxresident)k
+8inputs+16outputs (0major+2956minor)pagefaults 0swaps
+done
