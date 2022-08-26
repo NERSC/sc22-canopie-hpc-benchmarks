@@ -19,22 +19,22 @@ sns.set_style("ticks")
 sns.set_context("poster")
 
 frameworks=np.array([
-'Baremetal-first',
+'Bare-metal-first',
 'Shifter-first',
 'Podman-exec-first',
-'Baremetal-first',
+'Bare-metal-first',
 'Shifter-first',
 'Podman-exec-first',
-'Baremetal-first',
+'Bare-metal-first',
 'Shifter-first',
 'Podman-exec-first',
-'Baremetal-second',
+'Bare-metal-second',
 'Shifter-second',
 'Podman-exec-second',
-'Baremetal-second',
+'Bare-metal-second',
 'Shifter-second',
 'Podman-exec-second',
-'Baremetal-second',
+'Bare-metal-second',
 'Shifter-second',
 'Podman-exec-second',
 'Podman-exec-second'
@@ -131,46 +131,56 @@ data128=np.array([
 dict32 = dict()
 dict32['Nodes']=nodes
 dict32['Framework']=frameworks
-dict32['Runtime']=data32
-dict32['Ranks per Node']=32*np.ones(19).astype(int)
+dict32['Runtime (s)']=data32
+dict32['MPI tasks per node']=32*np.ones(19).astype(int)
 df32 = pd.DataFrame(dict32)
 
 dict64 = dict()
 dict64['Nodes']=nodes
 dict64['Framework']=frameworks
-dict64['Runtime']=data64
-dict64['Ranks per Node']=64*np.ones(19).astype(int)
+dict64['Runtime (s)']=data64
+dict64['MPI tasks per node']=64*np.ones(19).astype(int)
 df64 = pd.DataFrame(dict64)
 
 dict128 = dict()
 dict128['Nodes']=nodes
 dict128['Framework']=frameworks
-dict128['Runtime']=data128
-dict128['Ranks per Node']=128*np.ones(19).astype(int)
+dict128['Runtime (s)']=data128
+dict128['MPI tasks per node']=128*np.ones(19).astype(int)
 df128 = pd.DataFrame(dict128)
 
 plotdf=pd.concat([df32,df64,df128])
-hue_order=["Baremetal-first","Baremetal-second","Shifter-first","Shifter-second","Podman-exec-first","Podman-exec-second"]
+hue_order=["Bare-metal-first","Bare-metal-second","Shifter-first","Shifter-second","Podman-exec-first","Podman-exec-second"]
 #a dictionary mapping hue levels to matplotlib colors
 palette=dict()
-palette['Baremetal-first']='darkred'
-palette['Baremetal-second']='red'
+palette['Bare-metal-first']='darkred'
+palette['Bare-metal-second']='red'
 palette['Shifter-first']='darkblue'
 palette['Shifter-second']='blue'
 palette['Podman-exec-first']='darkgreen'
 palette['Podman-exec-second']='seagreen'
 g=sns.catplot(data=plotdf,
-                row="Ranks per Node",
+                row="MPI tasks per node",
                 aspect=2.2,
                 x="Nodes", 
-                y="Runtime", 
+                y="Runtime (s)", 
                 hue="Framework",
                 hue_order=hue_order,
                 palette=palette,
                 kind="bar",
-                sharey=False)
+                sharey=False,
+                sharex=False,
+#                margin_titles=True)
+)
+
+#label nodes on every xaxis
+ax = g.axes
+ax[0,0].set_xlabel("Nodes")
+ax[1,0].set_xlabel("Nodes")
+ax[2,0].set_xlabel("Nodes")
 
 # Finalize the plot
-g.fig.subplots_adjust(top=0.9)
-g.fig.suptitle('mpi4py + Astropy import')
+g.fig.subplots_adjust(top=0.90)
+plt.subplots_adjust(hspace=0.5)
+g.fig.suptitle('AstroPy+mpi4py')
 plt.savefig("astropyle.png", dpi=300)
