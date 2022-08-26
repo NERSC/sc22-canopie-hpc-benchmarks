@@ -1,0 +1,1017 @@
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+index 0000000..43c312e
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1,3 @@
++*.out
++*__pycache__
++dummy*
+diff --git a/LBNL/Makefile b/LBNL/Makefile
+new file mode 100644
+index 0000000..f6e6dd2
+--- /dev/null
++++ b/LBNL/Makefile
+@@ -0,0 +1,22 @@
++REPO := registry.nersc.gov/das/mlperfhpc_v10
++TAG := nersc-0.0.3
++.PHONY: all clean build-deepcam $(REPO)/deepcam
++
++all: push-deepcam
++
++GIT_ROOT := $(basename $(shell git rev-parse --git-dir))
++BASE_CONTEXT := $(GIT_ROOT)/NVIDIA/benchmarks/deepcam/implementations/pytorch
++CONTEXT := $(GIT_ROOT)/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch
++
++
++ifneq (linux/amd64,$(shell docker info -f {{.Architecture}}))
++	PLATFORM+=--platform=linux/amd64
++endif
++
++build-deepcam: $(REPO)/deepcam
++	docker build $(PLATFORM) -t $<-base:$(TAG) $(BASE_CONTEXT)
++	docker build $(PLATFORM) --build-arg FROM_IMAGE_NAME=$<-base:$(TAG) -t $<:$(TAG) $(CONTEXT)
++
++push-deepcam: build-deepcam
++	docker push $(REPO)/deepcam-base:$(TAG)
++	docker push $(REPO)/deepcam:$(TAG)
+diff --git a/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/Dockerfile b/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/Dockerfile
+new file mode 100644
+index 0000000..0cd8768
+--- /dev/null
++++ b/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/Dockerfile
+@@ -0,0 +1,4 @@
++ARG FROM_IMAGE_NAME=registry.nersc.gov/das/mlperfhpc_v10/deepcam-base
++FROM ${FROM_IMAGE_NAME}
++
++COPY . .
+diff --git a/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/configs/config_pm_128x4x1.sh b/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/configs/config_pm_128x4x1.sh
+new file mode 100644
+index 0000000..a8236e2
+--- /dev/null
++++ b/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/configs/config_pm_128x4x1.sh
+@@ -0,0 +1,40 @@
++#!/bin/bash
++
++# hyperparameters
++export LOCAL_BATCH_SIZE=1
++export START_LR=0.0055
++export OPTIMIZER="LAMB"
++export LR_SCHEDULE_TYPE="multistep"
++export LR_MILESTONES="800"
++export LR_DECAY_RATE="0.1"
++export LR_WARMUP_STEPS=400
++export LR_WARMUP_FACTOR=1.
++export WEIGHT_DECAY=0.01
++export BATCHNORM_GROUP_SIZE=2
++export MAX_EPOCHS=150
++
++# data parameters
++export SHUFFLE_MODE="global"
++export DATA_FORMAT="dali-es"
++export DATA_OVERSAMPLING_FACTOR=2
++export PRECISION_MODE="amp"
++export LOCAL_VALIDATION_BATCH_SIZE=8
++
++# output parameters
++#export OUTPUT_ROOT=/results/best
++
++# auxiliary parameters
++export LOGGING_FREQUENCY=10
++
++# misc args
++#export ADDITIONAL_ARGS="--disable_comm_overlap --enable_graph"
++export ADDITIONAL_ARGS="--enable_jit --disable_comm_overlap --enable_graph"
++
++# run parameters
++export NEXP=1
++
++# system parameters
++export DGXNGPU=4
++export DGXNNODES=128
++export DGXSYSTEM=$(basename $(readlink -f ${BASH_SOURCE[0]}) | sed 's/^config_//' | sed 's/\.sh$//' )
++export WALLTIME=01:00:00
+diff --git a/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/configs/config_pm_16x4x1.sh b/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/configs/config_pm_16x4x1.sh
+new file mode 100644
+index 0000000..0d91678
+--- /dev/null
++++ b/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/configs/config_pm_16x4x1.sh
+@@ -0,0 +1,40 @@
++#!/bin/bash
++
++# hyperparameters
++export LOCAL_BATCH_SIZE=1
++export START_LR=0.0055
++export OPTIMIZER="LAMB"
++export LR_SCHEDULE_TYPE="multistep"
++export LR_MILESTONES="800"
++export LR_DECAY_RATE="0.1"
++export LR_WARMUP_STEPS=400
++export LR_WARMUP_FACTOR=1.
++export WEIGHT_DECAY=0.01
++export BATCHNORM_GROUP_SIZE=2
++export MAX_EPOCHS=150
++
++# data parameters
++export SHUFFLE_MODE="global"
++export DATA_FORMAT="dali-es"
++export DATA_OVERSAMPLING_FACTOR=2
++export PRECISION_MODE="amp"
++export LOCAL_VALIDATION_BATCH_SIZE=8
++
++# output parameters
++#export OUTPUT_ROOT=/results/best
++
++# auxiliary parameters
++export LOGGING_FREQUENCY=10
++
++# misc args
++#export ADDITIONAL_ARGS="--disable_comm_overlap --enable_graph"
++export ADDITIONAL_ARGS="--enable_jit --disable_comm_overlap --enable_graph"
++
++# run parameters
++export NEXP=1
++
++# system parameters
++export DGXNGPU=4
++export DGXNNODES=16
++export DGXSYSTEM=$(basename $(readlink -f ${BASH_SOURCE[0]}) | sed 's/^config_//' | sed 's/\.sh$//' )
++export WALLTIME=01:00:00
+diff --git a/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/configs/config_pm_512x4x1.sh b/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/configs/config_pm_1x4x1.sh
+similarity index 96%
+rename from LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/configs/config_pm_512x4x1.sh
+rename to LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/configs/config_pm_1x4x1.sh
+index c95f08f..248d72d 100644
+--- a/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/configs/config_pm_512x4x1.sh
++++ b/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/configs/config_pm_1x4x1.sh
+@@ -11,6 +11,7 @@ export LR_WARMUP_STEPS=400
+ export LR_WARMUP_FACTOR=1.
+ export WEIGHT_DECAY=0.01
+ export BATCHNORM_GROUP_SIZE=2
++export MAX_EPOCHS=1
+ 
+ # data parameters
+ export SHUFFLE_MODE="global"
+@@ -34,6 +35,6 @@ export NEXP=1
+ 
+ # system parameters
+ export DGXNGPU=4
+-export DGXNNODES=512
++export DGXNNODES=1
+ export DGXSYSTEM=$(basename $(readlink -f ${BASH_SOURCE[0]}) | sed 's/^config_//' | sed 's/\.sh$//' )
+ export WALLTIME=00:30:00
+diff --git a/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/configs/config_pm_256x4x1.sh b/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/configs/config_pm_256x4x1.sh
+new file mode 100644
+index 0000000..43ca04c
+--- /dev/null
++++ b/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/configs/config_pm_256x4x1.sh
+@@ -0,0 +1,40 @@
++#!/bin/bash
++
++# hyperparameters
++export LOCAL_BATCH_SIZE=1
++export START_LR=0.0055
++export OPTIMIZER="LAMB"
++export LR_SCHEDULE_TYPE="multistep"
++export LR_MILESTONES="800"
++export LR_DECAY_RATE="0.1"
++export LR_WARMUP_STEPS=400
++export LR_WARMUP_FACTOR=1.
++export WEIGHT_DECAY=0.01
++export BATCHNORM_GROUP_SIZE=2
++export MAX_EPOCHS=150
++
++# data parameters
++export SHUFFLE_MODE="global"
++export DATA_FORMAT="dali-es"
++export DATA_OVERSAMPLING_FACTOR=2
++export PRECISION_MODE="amp"
++export LOCAL_VALIDATION_BATCH_SIZE=8
++
++# output parameters
++#export OUTPUT_ROOT=/results/best
++
++# auxiliary parameters
++export LOGGING_FREQUENCY=10
++
++# misc args
++#export ADDITIONAL_ARGS="--disable_comm_overlap --enable_graph"
++export ADDITIONAL_ARGS="--enable_jit --disable_comm_overlap --enable_graph"
++
++# run parameters
++export NEXP=1
++
++# system parameters
++export DGXNGPU=4
++export DGXNNODES=256
++export DGXSYSTEM=$(basename $(readlink -f ${BASH_SOURCE[0]}) | sed 's/^config_//' | sed 's/\.sh$//' )
++export WALLTIME=01:00:00
+diff --git a/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/configs/config_pm_2x4x1.sh b/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/configs/config_pm_2x4x1.sh
+new file mode 100644
+index 0000000..252f779
+--- /dev/null
++++ b/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/configs/config_pm_2x4x1.sh
+@@ -0,0 +1,40 @@
++#!/bin/bash
++
++# hyperparameters
++export LOCAL_BATCH_SIZE=1
++export START_LR=0.0055
++export OPTIMIZER="LAMB"
++export LR_SCHEDULE_TYPE="multistep"
++export LR_MILESTONES="800"
++export LR_DECAY_RATE="0.1"
++export LR_WARMUP_STEPS=400
++export LR_WARMUP_FACTOR=1.
++export WEIGHT_DECAY=0.01
++export BATCHNORM_GROUP_SIZE=2
++export MAX_EPOCHS=2
++
++# data parameters
++export SHUFFLE_MODE="global"
++export DATA_FORMAT="dali-es"
++export DATA_OVERSAMPLING_FACTOR=2
++export PRECISION_MODE="amp"
++export LOCAL_VALIDATION_BATCH_SIZE=8
++
++# output parameters
++#export OUTPUT_ROOT=/results/best
++
++# auxiliary parameters
++export LOGGING_FREQUENCY=10
++
++# misc args
++#export ADDITIONAL_ARGS="--disable_comm_overlap --enable_graph"
++export ADDITIONAL_ARGS="--enable_jit --disable_comm_overlap --enable_graph"
++
++# run parameters
++export NEXP=1
++
++# system parameters
++export DGXNGPU=4
++export DGXNNODES=2
++export DGXSYSTEM=$(basename $(readlink -f ${BASH_SOURCE[0]}) | sed 's/^config_//' | sed 's/\.sh$//' )
++export WALLTIME=00:30:00
+diff --git a/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/configs/config_pm_32x4x1.sh b/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/configs/config_pm_32x4x1.sh
+new file mode 100644
+index 0000000..2dd636d
+--- /dev/null
++++ b/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/configs/config_pm_32x4x1.sh
+@@ -0,0 +1,40 @@
++#!/bin/bash
++
++# hyperparameters
++export LOCAL_BATCH_SIZE=1
++export START_LR=0.0055
++export OPTIMIZER="LAMB"
++export LR_SCHEDULE_TYPE="multistep"
++export LR_MILESTONES="800"
++export LR_DECAY_RATE="0.1"
++export LR_WARMUP_STEPS=400
++export LR_WARMUP_FACTOR=1.
++export WEIGHT_DECAY=0.01
++export BATCHNORM_GROUP_SIZE=2
++export MAX_EPOCHS=150
++
++# data parameters
++export SHUFFLE_MODE="global"
++export DATA_FORMAT="dali-es"
++export DATA_OVERSAMPLING_FACTOR=2
++export PRECISION_MODE="amp"
++export LOCAL_VALIDATION_BATCH_SIZE=8
++
++# output parameters
++#export OUTPUT_ROOT=/results/best
++
++# auxiliary parameters
++export LOGGING_FREQUENCY=10
++
++# misc args
++#export ADDITIONAL_ARGS="--disable_comm_overlap --enable_graph"
++export ADDITIONAL_ARGS="--enable_jit --disable_comm_overlap --enable_graph"
++
++# run parameters
++export NEXP=1
++
++# system parameters
++export DGXNGPU=4
++export DGXNNODES=32
++export DGXSYSTEM=$(basename $(readlink -f ${BASH_SOURCE[0]}) | sed 's/^config_//' | sed 's/\.sh$//' )
++export WALLTIME=01:00:00
+diff --git a/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/configs/config_pm_64x4x1.sh b/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/configs/config_pm_64x4x1.sh
+new file mode 100644
+index 0000000..c979154
+--- /dev/null
++++ b/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/configs/config_pm_64x4x1.sh
+@@ -0,0 +1,40 @@
++#!/bin/bash
++
++# hyperparameters
++export LOCAL_BATCH_SIZE=1
++export START_LR=0.0055
++export OPTIMIZER="LAMB"
++export LR_SCHEDULE_TYPE="multistep"
++export LR_MILESTONES="800"
++export LR_DECAY_RATE="0.1"
++export LR_WARMUP_STEPS=400
++export LR_WARMUP_FACTOR=1.
++export WEIGHT_DECAY=0.01
++export BATCHNORM_GROUP_SIZE=2
++export MAX_EPOCHS=150
++
++# data parameters
++export SHUFFLE_MODE="global"
++export DATA_FORMAT="dali-es"
++export DATA_OVERSAMPLING_FACTOR=2
++export PRECISION_MODE="amp"
++export LOCAL_VALIDATION_BATCH_SIZE=8
++
++# output parameters
++#export OUTPUT_ROOT=/results/best
++
++# auxiliary parameters
++export LOGGING_FREQUENCY=10
++
++# misc args
++#export ADDITIONAL_ARGS="--disable_comm_overlap --enable_graph"
++export ADDITIONAL_ARGS="--enable_jit --disable_comm_overlap --enable_graph"
++
++# run parameters
++export NEXP=1
++
++# system parameters
++export DGXNGPU=4
++export DGXNNODES=64
++export DGXSYSTEM=$(basename $(readlink -f ${BASH_SOURCE[0]}) | sed 's/^config_//' | sed 's/\.sh$//' )
++export WALLTIME=01:00:00
+diff --git a/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/parse-times.sh b/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/parse-times.sh
+new file mode 100755
+index 0000000..cf2c9ad
+--- /dev/null
++++ b/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/parse-times.sh
+@@ -0,0 +1,18 @@
++#!/bin/bash
++
++extract_time_ms () { 
++  grep $1 $2 | grep -Po '"time_ms": \K\d+' || echo "np.nan" 
++}
++
++for FILE in ${@};
++do
++  echo ${FILE} | grep -Po "^[\w\-\.]+-\K\d+(?=\.out$)"
++  grep -Po "\+ \[\[ \! \K(shifter|podman-exec|podman)(?= =~ \^\(shifter\|podman\|podman-exec\)\\$ \]\]$)" ${FILE}
++  grep -Po "/pscratch(/[\w\-\.]+)*/\K([\w\-\.]+)(?=/:/data:ro$)" ${FILE}
++  grep -Po '^Milliseconds since epoch : \K\d+$' ${FILE}
++  extract_time_ms init_start ${FILE}
++  extract_time_ms init_stop ${FILE}
++  extract_time_ms run_start ${FILE}
++  extract_time_ms run_stop ${FILE}
++  echo '-----'
++done
+diff --git a/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/podman.env b/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/podman.env
+new file mode 100644
+index 0000000..538a6eb
+--- /dev/null
++++ b/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/podman.env
+@@ -0,0 +1,387 @@
++ADDITIONAL_ARGS
++APP2_STATE
++BASH_FUNC_ml%%
++BASH_FUNC_module%%
++BATCHNORM_GROUP_SIZE
++CFS
++COCOAPI_VERSION
++COLORTERM
++CONTAINER_RUNTIME
++CPATH
++CPU
++CRAYPAT_LD_LIBRARY_PATH
++CRAYPAT_OPTS_EXECUTABLE
++CRAYPAT_ROOT
++CRAYPE_DIR
++CRAYPE_NETWORK_TARGET
++CRAYPE_VERSION
++CRAY_CPU_TARGET
++CRAY_DSMML_BASEDIR
++CRAY_DSMML_DIR
++CRAY_DSMML_PREFIX
++CRAY_DSMML_ROOTDIR
++CRAY_DSMML_VER
++CRAY_DSMML_VERSION
++CRAY_LD_LIBRARY_PATH
++CRAY_LIBSCI_BASE_DIR
++CRAY_LIBSCI_DIR
++CRAY_LIBSCI_PREFIX_DIR
++CRAY_LIBSCI_VERSION
++CRAY_LMOD_COMPILER
++CRAY_LMOD_CPU
++CRAY_LMOD_MPI
++CRAY_LMOD_NET
++CRAY_MPICH_BASEDIR
++CRAY_MPICH_DIR
++CRAY_MPICH_PREFIX
++CRAY_MPICH_ROOTDIR
++CRAY_MPICH_VER
++CRAY_MPICH_VERSION
++CRAY_NVIDIA_PREFIX
++CRAY_NVIDIA_VERSION
++CRAY_PERFTOOLS_PREFIX
++CRAY_PERFTOOLS_VERSION
++CRAY_XPMEM_INCLUDE_OPTS
++CRAY_XPMEM_POST_LINK_OPTS
++CSHEDIT
++CSHRCREAD
++CUBLAS_VERSION
++CUDA_CACHE_DISABLE
++CUDA_DRIVER_VERSION
++CUDA_HOME
++CUDA_VERSION
++CUDA_VISIBLE_DEVICES
++CUDNN_VERSION
++CUFFT_VERSION
++CURAND_VERSION
++CUSOLVER_VERSION
++CUSPARSE_VERSION
++CUTENSOR_VERSION
++DALI_BUILD
++DALI_VERSION
++DARSHAN_BASE_DIR
++DATADIR
++DATA_FORMAT
++DATA_OVERSAMPLING_FACTOR
++DATESTAMP
++DBUS_SESSION_BUS_ADDRESS
++DGXNGPU
++DGXNNODES
++DGXSYSTEM
++DLFW_VERSION
++DLPROF_VERSION
++ENABLE_GPU
++ENV
++ENVIRONMENT
++EXP_ID
++GDRCOPY_VERSION
++GPG_TTY
++G_BROKEN_FILENAMES
++G_FILENAME_ENCODING
++HISTFILESIZE
++HISTSIZE
++HOME
++HOST
++HOSTNAME
++HOSTTYPE
++HPCX_VERSION
++HUGETLB_VERBOSE
++JAVA_BINDIR
++JAVA_HOME
++JAVA_ROOT
++JDK_HOME
++JRE_HOME
++JUPYTER_PORT
++LANG
++LC_ALL
++LESS
++LESSCLOSE
++LESSKEY
++LESSOPEN
++LESS_ADVANCED_PREPROCESSOR
++LIBGL_ALWAYS_INDIRECT
++LIBGL_DEBUG
++LIBRARY_PATH
++LIBSCI_BASE_DIR
++LIBSCI_VERSION
++LMOD_AVAIL_STYLE
++LMOD_CACHED_LOADS
++LMOD_CASE_INDEPENDENT_SORTING
++LMOD_CMD
++LMOD_DIR
++LMOD_FAMILY_COMPILER
++LMOD_FAMILY_COMPILER_VERSION
++LMOD_FAMILY_CRAYPE
++LMOD_FAMILY_CRAYPE_CPU
++LMOD_FAMILY_CRAYPE_CPU_VERSION
++LMOD_FAMILY_CRAYPE_NETWORK
++LMOD_FAMILY_CRAYPE_NETWORK_VERSION
++LMOD_FAMILY_CRAYPE_VERSION
++LMOD_FAMILY_MPI
++LMOD_FAMILY_MPI_VERSION
++LMOD_FAMILY_PRGENV
++LMOD_FAMILY_PRGENV_VERSION
++LMOD_IGNORE_CACHE
++LMOD_MODULERCFILE
++LMOD_PACKAGE_PATH
++LMOD_PKG
++LMOD_RC
++LMOD_ROOT
++LMOD_SETTARG_FULL_SUPPORT
++LMOD_SITE_NAME
++LMOD_SYSHOST
++LMOD_SYSTEM_DEFAULT_MODULES
++LMOD_SYSTEM_NAME
++LMOD_VERSION
++LMOD_sys
++LOADEDMODULES
++LOCAL_BATCH_SIZE
++LOCAL_VALIDATION_BATCH_SIZE
++LOGGING_FREQUENCY
++LOGNAME
++LR_DECAY_RATE
++LR_MILESTONES
++LR_SCHEDULE_TYPE
++LR_WARMUP_FACTOR
++LR_WARMUP_STEPS
++MACHTYPE
++MAIL
++MANPATH
++MAN_POSIXLY_CORRECT
++MAX_EPOCHS
++MINICOM
++MODULEPATH
++MODULEPATH_ROOT
++MODULESHOME
++MOFED_VERSION
++MORE
++MPICH_DIR
++NCCL_ASYNC_ERROR_HANDLING
++NCCL_DEBUG
++NCCL_NET_GDR_LEVEL
++NCCL_VERSION
++NERSC_HOST
++NEXP
++NPP_VERSION
++NSIGHT_COMPUTE_VERSION
++NSIGHT_SYSTEMS_VERSION
++NVHPC
++NVIDIA_BUILD_ID
++NVIDIA_DRIVER_CAPABILITIES
++NVIDIA_PATH
++NVIDIA_PYTORCH_VERSION
++NVIDIA_REQUIRE_CUDA
++NVIDIA_VERSION
++NVIDIA_VISIBLE_DEVICES
++NVJPEG_VERSION
++NVM_DIR
++OFFLOAD_INIT
++OLDPWD
++OPAL_PREFIX
++OPENMPI_VERSION
++OPENUCX_VERSION
++OPTIMIZER
++OSTYPE
++OUTPUT_ROOT
++PAGER
++PAT_BUILD_PAPI_LIBDIR
++PELOCAL_PRGENV
++PERFTOOLS_VERSION
++PERL5LIB
++PE_CRAYCLANG_FIXED_PKGCONFIG_PATH
++PE_DSMML_MODULE_NAME
++PE_DSMML_PKGCONFIG_LIBS
++PE_ENV
++PE_FORTRAN_PKGCONFIG_LIBS
++PE_LIBSCI_FIXED_PRGENV
++PE_LIBSCI_GENCOMPILERS_AOCC_x86_64
++PE_LIBSCI_GENCOMPILERS_CRAY_x86_64
++PE_LIBSCI_GENCOMPILERS_GNU_x86_64
++PE_LIBSCI_GENCOMPILERS_NVIDIA_x86_64
++PE_LIBSCI_GENCOMPS_AOCC_x86_64
++PE_LIBSCI_GENCOMPS_CRAY_x86_64
++PE_LIBSCI_GENCOMPS_GNU_x86_64
++PE_LIBSCI_GENCOMPS_NVIDIA_x86_64
++PE_LIBSCI_MODULE_NAME
++PE_LIBSCI_OMP_REQUIRES
++PE_LIBSCI_OMP_REQUIRES_openmp
++PE_LIBSCI_PKGCONFIG_LIBS
++PE_LIBSCI_PKGCONFIG_VARIABLES
++PE_LIBSCI_REQUIRED_PRODUCTS
++PE_LIBSCI_VOLATILE_PKGCONFIG_PATH
++PE_LIBSCI_VOLATILE_PRGENV
++PE_MPICH_FIXED_PRGENV
++PE_MPICH_FORTRAN_PKGCONFIG_LIBS
++PE_MPICH_GENCOMPILERS_NVIDIA
++PE_MPICH_GTL_DIR_amd_gfx906
++PE_MPICH_GTL_DIR_amd_gfx908
++PE_MPICH_GTL_DIR_amd_gfx90a
++PE_MPICH_GTL_DIR_nvidia70
++PE_MPICH_GTL_DIR_nvidia80
++PE_MPICH_GTL_LIBS_amd_gfx906
++PE_MPICH_GTL_LIBS_amd_gfx908
++PE_MPICH_GTL_LIBS_amd_gfx90a
++PE_MPICH_GTL_LIBS_nvidia70
++PE_MPICH_GTL_LIBS_nvidia80
++PE_MPICH_MODULE_NAME
++PE_MPICH_PKGCONFIG_LIBS
++PE_MPICH_PKGCONFIG_VARIABLES
++PE_NVIDIA_FIXED_PKGCONFIG_PATH
++PE_PERFTOOLS_MPICH_LIBDIR
++PE_PKGCONFIG_LIBS
++PE_PKGCONFIG_PRODUCTS
++PE_PRODUCT_LIST
++PE_XPMEM_PKGCONFIG_LIBS
++PKGCONFIG_ENABLED
++PKG_CONFIG_PATH
++PMI_FD
++PMI_JOBID
++PMI_RANK
++PMI_SIZE
++PRECISION_MODE
++PROFILEREAD
++PSCRATCH
++PWD
++PYTHONIOENCODING
++PYTORCH_BUILD_NUMBER
++PYTORCH_BUILD_VERSION
++PYTORCH_VERSION
++RDMACORE_VERSION
++SCRATCH
++SDK_HOME
++SEED
++SHELL
++SHIFTER_IMAGE
++SHIFTER_IMAGEREQUEST
++SHIFTER_MODULE_GPU
++SHIFTER_RUNTIME
++SHLVL
++SHUFFLE_MODE
++SLURMD_NODENAME
++SLURM_CLUSTER_NAME
++SLURM_CPUS_ON_NODE
++SLURM_CPU_BIND
++SLURM_CPU_BIND_LIST
++SLURM_CPU_BIND_TYPE
++SLURM_CPU_BIND_VERBOSE
++SLURM_DISTRIBUTION
++SLURM_GPUS_ON_NODE
++SLURM_GPUS_PER_NODE
++SLURM_GTIDS
++SLURM_JOBID
++SLURM_JOB_ACCOUNT
++SLURM_JOB_CPUS_PER_NODE
++SLURM_JOB_CPUS_PER_NODE_PACK_GROUP_0
++SLURM_JOB_GID
++SLURM_JOB_GPUS
++SLURM_JOB_ID
++SLURM_JOB_NAME
++SLURM_JOB_NODELIST
++SLURM_JOB_NUM_NODES
++SLURM_JOB_PARTITION
++SLURM_JOB_QOS
++SLURM_JOB_RESERVATION
++SLURM_JOB_UID
++SLURM_JOB_USER
++SLURM_LAUNCH_NODE_IPADDR
++SLURM_LOCALID
++SLURM_MEM_PER_NODE
++SLURM_MPI_TYPE
++SLURM_NNODES
++SLURM_NODEID
++SLURM_NODELIST
++SLURM_NODE_ALIASES
++SLURM_NPROCS
++SLURM_NTASKS
++SLURM_NTASKS_PER_NODE
++SLURM_PRIO_PROCESS
++SLURM_PROCID
++SLURM_SPANK_SHIFTER_IMAGE
++SLURM_SPANK_SHIFTER_IMAGEREQUEST
++SLURM_SPANK_SHIFTER_IMAGETYPE
++SLURM_SPANK_SHIFTER_SSH_PUBKEY
++SLURM_SPANK__SLURM_SPANK_OPTION_shifter_image
++SLURM_SRUN_COMM_HOST
++SLURM_SRUN_COMM_PORT
++SLURM_STEPID
++SLURM_STEP_GPUS
++SLURM_STEP_ID
++SLURM_STEP_LAUNCHER_PORT
++SLURM_STEP_NODELIST
++SLURM_STEP_NUM_NODES
++SLURM_STEP_NUM_TASKS
++SLURM_STEP_RESV_PORTS
++SLURM_STEP_TASKS_PER_NODE
++SLURM_SUBMIT_DIR
++SLURM_SUBMIT_HOST
++SLURM_TASKS_PER_NODE
++SLURM_TASK_PID
++SLURM_TOPOLOGY_ADDR
++SLURM_TOPOLOGY_ADDR_PATTERN
++SLURM_UMASK
++SLURM_WORKING_CLUSTER
++SQUASH_DIR
++SRUN_DEBUG
++SSH_AUTH_SOCK
++SSH_CLIENT
++SSH_CONNECTION
++SSH_TTY
++START_LR
++TRAINING_INSTANCE_SIZE
++TENSORBOARD_PORT
++TERM
++TORCH_CUDA_ARCH_LIST
++TRTOSS_VERSION
++TRT_VERSION
++TZ
++USER
++WALLTIME
++WEIGHT_DECAY
++WINDOWMANAGER
++WIREUP_METHOD
++XDG_CONFIG_DIRS
++XDG_DATA_DIRS
++XDG_SESSION_ID
++XKEYSYMDB
++XNLSPATH
++_
++_CUDA_COMPAT_PATH
++_CUDA_COMPAT_STATUS
++_LMFILES_
++_ModuleTable001_
++_ModuleTable002_
++_ModuleTable003_
++_ModuleTable004_
++_ModuleTable005_
++_ModuleTable006_
++_ModuleTable007_
++_ModuleTable008_
++_ModuleTable009_
++_ModuleTable010_
++_ModuleTable011_
++_ModuleTable012_
++_ModuleTable_Sz_
++__LMOD_REF_COUNT_CPATH
++__LMOD_REF_COUNT_CRAY_LD_LIBRARY_PATH
++__LMOD_REF_COUNT_LD_LIBRARY_PATH
++__LMOD_REF_COUNT_LOADEDMODULES
++__LMOD_REF_COUNT_MANPATH
++__LMOD_REF_COUNT_MODULEPATH
++__LMOD_REF_COUNT_PATH
++__LMOD_REF_COUNT_PERL5LIB
++__LMOD_REF_COUNT_PE_CRAYCLANG_FIXED_PKGCONFIG_PATH
++__LMOD_REF_COUNT_PE_DSMML_PKGCONFIG_LIBS
++__LMOD_REF_COUNT_PE_FORTRAN_PKGCONFIG_LIBS
++__LMOD_REF_COUNT_PE_LIBSCI_REQUIRED_PRODUCTS
++__LMOD_REF_COUNT_PE_MPICH_FIXED_PRGENV
++__LMOD_REF_COUNT_PE_MPICH_FORTRAN_PKGCONFIG_LIBS
++__LMOD_REF_COUNT_PE_MPICH_GENCOMPILERS_NVIDIA
++__LMOD_REF_COUNT_PE_MPICH_PKGCONFIG_LIBS
++__LMOD_REF_COUNT_PE_NVIDIA_FIXED_PKGCONFIG_PATH
++__LMOD_REF_COUNT_PE_PKGCONFIG_LIBS
++__LMOD_REF_COUNT_PE_PKGCONFIG_PRODUCTS
++__LMOD_REF_COUNT_PE_PRODUCT_LIST
++__LMOD_REF_COUNT_PKG_CONFIG_PATH
++__LMOD_REF_COUNT__LMFILES_
++}
++}
+diff --git a/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/run_pm.sub b/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/run_pm.sub
+index fbf049d..15bdb4a 100755
+--- a/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/run_pm.sub
++++ b/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/run_pm.sub
+@@ -1,21 +1,36 @@
+ #!/bin/bash
+ #SBATCH -C gpu
++#SBATCH -A nstaff_g
+ #SBATCH -J mlperf-deepcam-pm
+ #SBATCH --gpus-per-node 4
+-#SBATCH --image nvcr.io/nvdlfwea/mlperfhpc_v10/deepcam:optimized-21.09
+ #SBATCH --exclusive
+ 
++#nvcr.io/nvdlfwea/mlperfhpc_v10/deepcam:optimized-21.09
++module use /global/common/shared/das/podman/modulefiles/
++module load podman
++export PATH="~/bin:$PATH"
++
++LOCALIZE='
++/global/common/shared/das/podman.sync/bin/localize.sh ;
++SRUN_HOME=/tmp ;
++PATH=/tmp/$(id -u)_hpc/podman/bin:/usr/bin:/bin ;
++unset LD_LIBRARY_PATH'
++
++ln -s slurm-${SLURM_JOB_ID}.out ${CONTAINER_RUNTIME}-${SLURM_JOB_NUM_NODES}-${SLURM_JOB_ID}.out
++
+ set -euxo pipefail
+ 
+ env | grep SLURM
+ 
+ # Vars with defaults
++: "${IMAGE:=registry.nersc.gov/das/mlperfhpc_v10/deepcam:nersc-0.0.3}"
+ : "${NEXP:=1}"
+ : "${DATESTAMP:=$(date +'%y%m%d%H%M%S%N')}"
+ : "${DATADIR:=/pscratch/sd/s/sfarrell/deepcam-hpc-v1.0/data/All-Hist/numpy}"
+ : "${LOGDIR:=$SCRATCH/deepcam-hpc-v1.0/results/${SLURM_JOB_NAME}-${SLURM_JOB_ID}}"
+ : "${OUTPUT_ROOT:=${LOGDIR}}" # temporary output directory before cleanup
+ : "${NCCL_ASYNC_ERROR_HANDLING:=0}"
++
+ export WIREUP_METHOD=${WIREUP_METHOD:-"nccl-slurm"}
+ 
+ export OUTPUT_ROOT
+@@ -44,10 +59,91 @@ if [ ! -f ./dummy ]; then
+ fi
+ srun --ntasks="${SLURM_JOB_NUM_NODES}" --ntasks-per-node=1 ./dummy
+ 
++# Choose container runtime
++if [[ ! "${CONTAINER_RUNTIME:-}" =~ ^(shifter|podman|podman-exec)$ ]]; then
++  CONTAINER_RUNTIME=shifter
++fi
++PODMAN_CONTAINER_NAME=mlperf-$(date | sha256sum | head -c 8)
++#PODMAN_VOLS=(
++#  -v /dev/xpmem:/dev/xpmem
++#  -v /dev/shm:/dev/shm
++#  -v /dev/infiniband:/dev/infiniband
++#  -v /var/spool/slurmd:/var/spool/slurmd
++#  -v /etc/libibverbs.d:/etc/libibverbs.d
++PODMAN_VOLS=(
++  -v /tmp:/run
++  -v "${LOGDIR}:${LOGDIR}"
++)
++export IMAGE
++export ENABLE_GPU=1
++case "${CONTAINER_RUNTIME}" in
++  shifter)
++    CONTAINER_CMD=(
++      shifter
++      --volume="${_cont_mounts}"
++      --module gpu
++      --image "${IMAGE}"
++      bash ./run_and_time.sh
++    )
++    ;;
++  podman)
++    eval ${LOCALIZE}
++    CONTAINER_CMD=(
++      podman-hpc.py --gpu run --rm
++      --network=host --privileged
++      --env-file podman.env
++      ${PODMAN_VOLS[@]}
++      -v "${_cont_mounts}"
++      ${IMAGE}
++      bash ./run_and_time.sh
++    )
++    ;;
++  podman-exec)
++    eval ${LOCALIZE}
++    CONTAINER_CMD=(
++      bash -c "
++        if [ \${SLURM_LOCALID} == 0 ] ; then
++          podman-hpc2.py run --rm --gpu --log-level debug \
++            --network=host --privileged \
++            --name ${PODMAN_CONTAINER_NAME} -d \
++            $(echo ${PODMAN_VOLS[@]}) \
++            -v ${_cont_mounts} \
++            ${IMAGE} sleep infinity
++          sleep 0.2
++        else
++          while [ \$(podman-hpc2.py ps -a|grep ${PODMAN_CONTAINER_NAME}|grep -c Up) -eq 0 ] ; do
++            sleep 0.2
++          done
++        fi
++
++        podman-hpc2.py exec \
++          -e "PALS_*" \
++          -e "PMI_*" \
++          -e "SLURM_*" \
++          --env-file podman.env \
++          --log-level debug \
++          ${PODMAN_CONTAINER_NAME} bash ./run_and_time.sh 
++
++        R=\$?
++        # Cleanup!
++        if [ \${SLURM_LOCALID} == 0 ] ; then
++          sleep 2
++          while [ \$(podman-hpc2.py exec ${PODMAN_CONTAINER_NAME} ps aux|wc -l) -gt 3 ] ; do
++            sleep 0.1
++          done
++          podman-hpc2.py kill ${PODMAN_CONTAINER_NAME} > /dev/null 2>/dev/null
++          podman-hpc2.py rm --force ${PODMAN_CONTAINER_NAME} > /dev/null 2>/dev/null
++        fi
++        exit \$R
++      "
++    )
++esac
++
+ # Run experiments
+ for _experiment_index in $(seq 1 "${NEXP}"); do
+     (
+ 	echo "Beginning trial ${_experiment_index} of ${NEXP}"
++        echo "Milliseconds since epoch : $(date +%s%3N)"
+ 
+ 	# Set Vars
+ 	export SEED=${_seed_override:-$(date +%s)}
+@@ -55,10 +151,15 @@ for _experiment_index in $(seq 1 "${NEXP}"); do
+ 	export DATESTAMP=${DATESTAMP}
+ 
+         # Run experiment
+-	srun --wait=120 --kill-on-bad-exit=0 --cpu-bind=none --mpi=pmi2 \
+-            --ntasks="${TOTALGPU}" --ntasks-per-node="${DGXNGPU}" \
+-            shifter --volume="${_cont_mounts}" --module gpu \
+-            bash ./run_and_time.sh
++	#srun \
++        #  --wait=120 \
++        #  --kill-on-bad-exit=0 \
++        HOME=${SRUN_HOME:=$HOME} srun \
++          --cpu-bind=none \
++          --mpi=pmi2 \
++          --ntasks="${TOTALGPU}" \
++          --ntasks-per-node="${DGXNGPU}" \
++          "${CONTAINER_CMD[@]}"
+     )
+ done
+ wait
+diff --git a/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/scaling-podman-4k-2022Aug.sh b/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/scaling-podman-4k-2022Aug.sh
+new file mode 100755
+index 0000000..e9d0937
+--- /dev/null
++++ b/LBNL/benchmarks/deepcam/implementations/deepcam-pytorch/scaling-podman-4k-2022Aug.sh
+@@ -0,0 +1,55 @@
++#!/bin/bash
++
++#must provide a valid allocation here 
++ALLOCATION="--account=nstaff_g --reservation=rsv_name"
++export DATADIR=/pscratch/sd/s/sfarrell/deepcam-hpc-v1.0/data/4k-dataset/
++
++export CONTAINER_RUNTIME=podman
++source configs/config_pm_16x4x1.sh
++sbatch -N $DGXNNODES -t $WALLTIME $ALLOCATION run_pm.sub
++
++source configs/config_pm_32x4x1.sh
++sbatch -N $DGXNNODES -t $WALLTIME $ALLOCATION run_pm.sub
++
++source configs/config_pm_64x4x1.sh
++sbatch -N $DGXNNODES -t $WALLTIME $ALLOCATION run_pm.sub
++
++source configs/config_pm_128x4x1.sh
++sbatch -N $DGXNNODES -t $WALLTIME $ALLOCATION  run_pm.sub
++
++source configs/config_pm_256x4x1.sh
++sbatch -N $DGXNNODES -t $WALLTIME $ALLOCATION  run_pm.sub
++
++
++export CONTAINER_RUNTIME=podman-exec
++source configs/config_pm_16x4x1.sh
++sbatch -N $DGXNNODES -t $WALLTIME $ALLOCATION  run_pm.sub
++
++source configs/config_pm_32x4x1.sh
++sbatch -N $DGXNNODES -t $WALLTIME $ALLOCATION  run_pm.sub
++
++source configs/config_pm_64x4x1.sh
++sbatch -N $DGXNNODES -t $WALLTIME $ALLOCATION  run_pm.sub
++
++source configs/config_pm_128x4x1.sh
++sbatch -N $DGXNNODES -t $WALLTIME $ALLOCATION  run_pm.sub
++
++source configs/config_pm_256x4x1.sh
++sbatch -N $DGXNNODES -t $WALLTIME $ALLOCATION  run_pm.sub
++
++
++export CONTAINER_RUNTIME=shifter
++source configs/config_pm_16x4x1.sh
++sbatch -N $DGXNNODES -t $WALLTIME $ALLOCATION  run_pm.sub
++
++source configs/config_pm_32x4x1.sh
++sbatch -N $DGXNNODES -t $WALLTIME $ALLOCATION  run_pm.sub
++
++source configs/config_pm_64x4x1.sh
++sbatch -N $DGXNNODES -t $WALLTIME $ALLOCATION  run_pm.sub
++
++source configs/config_pm_128x4x1.sh
++sbatch -N $DGXNNODES -t $WALLTIME $ALLOCATION  run_pm.sub
++
++source configs/config_pm_256x4x1.sh
++sbatch -N $DGXNNODES -t $WALLTIME $ALLOCATION  run_pm.sub
+diff --git a/LBNL/benchmarks/deepcam/implementations/muller_1x4_ngc31.09_pytorch/README.md b/LBNL/benchmarks/deepcam/implementations/muller_1x4_ngc31.09_pytorch/README.md
+new file mode 100644
+index 0000000..39c27f1
+--- /dev/null
++++ b/LBNL/benchmarks/deepcam/implementations/muller_1x4_ngc31.09_pytorch/README.md
+@@ -0,0 +1,20 @@
++# Muller 1x4x1 PyTorch DeepCAM
++
++DeepCAM strong-scaling closed-devision submission on 1 node x 4 GPUs.  This is a configuration verification case.
++
++On Muller:
++```
++export DATADIR=/mscratch/sd/d/dfulton/deepcam-hpc-v1.0/data/256-dataset/
++```
++On Perlmutter:
++```
++export DATADIR=/pscratch/sd/s/sfarrell/deepcam-hpc-v1.0/data/256-dataset/
++```
++To run (include `--userns` for Podman runtimes):
++
++```
++cd ../deepcam-pytorch
++source configs/config_pm_1x4x1.sh
++export CONTAINER_RUNTIME=<shifter|podman|podman-exec>
++sbatch -N $DGXNNODES -t $WALLTIME [--userns] run_pm.sub
++```
+diff --git a/NVIDIA/benchmarks/deepcam/implementations/pytorch/Dockerfile b/NVIDIA/benchmarks/deepcam/implementations/pytorch/Dockerfile
+index 4b10c8b..7fdcc39 100644
+--- a/NVIDIA/benchmarks/deepcam/implementations/pytorch/Dockerfile
++++ b/NVIDIA/benchmarks/deepcam/implementations/pytorch/Dockerfile
+@@ -34,7 +34,7 @@ RUN pip install nvidia-pyindex && \
+     pip install nvidia-dlprof[pytorch]
+ 
+ #pip install more python modules
+-RUN pip install wandb
++RUN pip install wandb==0.12.1
+ 
+ #install mlperf logging
+ RUN pip install "git+https://github.com/mlcommons/logging.git@hpc-1.0.0-rc1"
