@@ -1,0 +1,3 @@
+[submodule "deepcam/hpc_results_v1.0"]
+	path = deepcam/hpc_results_v1.0
+	url = https://github.com/mlcommons/hpc_results_v1.0
