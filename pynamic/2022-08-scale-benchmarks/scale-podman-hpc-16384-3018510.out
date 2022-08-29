@@ -1,0 +1,46 @@
+Doing srun
+Set PATH PATH=/tmp/16907_hpc/podman//bin:$PATH
+Podman
+Pynamic: Version 1.3.3
+Pynamic: run on 08/19/22 17:24:18 with 16384 MPI tasks
+
+Pynamic: driver beginning... now importing modules
+Pynamic: driver finished importing all modules... visiting all module functions
+Pynamic: module import time = 2.19332098961 secs
+Pynamic: module visit time = 0.178125858307 secs
+Pynamic: module test passed!
+
+Pynamic: testing mpi capability...
+
+Starting computation (groan)
+
+('Header length is ', 54)
+('BMP size is ', (400, 400))
+('Data length is ', 480000)
+
+Pynamic: fractal mpi time = 2.55936288834 secs
+Pynamic: mpi test passed!
+
+Time: 4:46.83
+Cached
+Pynamic: Version 1.3.3
+Pynamic: run on 08/19/22 17:29:35 with 16384 MPI tasks
+
+Pynamic: driver beginning... now importing modules
+Pynamic: driver finished importing all modules... visiting all module functions
+Pynamic: module import time = 2.11044096947 secs
+Pynamic: module visit time = 0.141815185547 secs
+Pynamic: module test passed!
+
+Pynamic: testing mpi capability...
+
+Starting computation (groan)
+
+('Header length is ', 54)
+('BMP size is ', (400, 400))
+('Data length is ', 480000)
+
+Pynamic: fractal mpi time = 2.01802802086 secs
+Pynamic: mpi test passed!
+
+Time: 5:15.94

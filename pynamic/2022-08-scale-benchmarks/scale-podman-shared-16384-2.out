@@ -1,0 +1,563 @@
+Doing srun
+Set PATH PATH=/tmp/16907_hpc/podman//bin:$PATH
+effecb3dc80fb9d15fe74531d7112b1576065f4f8fbb567ecd30987a02f6bfcb
+ece771525e6d0c74ac7b00a27a0d1cf792a41de121be74ea6682d83c5c84802f
+c17eacd9aa10bc7910eadf6afc8bd72d3aef2e50dbad25c8301843814801871e
+f44b8bde5089451501496c4cd6010d640b4b34cc48d994dc836fc3a365c9dee8
+01c231331805ccb547cf00da7131c053a4db890a17b88f5eecabe5167f2e86cc
+7ec3a41c316e190a76ddc26770c413e313b02038859428bb7579e3e83cc92e91
+03a1faae827960927545a7c37cf6785354707d7ff41099713df27d5304f9fea1
+35b6857a4a3b2ab70d81f4b1e800dfa78e442c9c26afc2121d2f4c7f27e39124
+95f718755aad044b09368748f96f43d485890fd28391a097f79d6b99acd4f35e
+5a061ea94b102ac2b01c3a68f5825381653f037da6353b106473ceca019ba900
+aa2f725937b26f7182a7dcd83f5b81cd531114eb7908b3bd22ee88d07c9eb471
+f57cf08351a7bf6414f6f6c41d842c622bce4a6392eeb2095d09470bb82070d0
+305ad4fb4951d1dc542a632968881ed2698c7b9634a4239eb1d9a416387eb367
+d74a33b504b298d017bf55ab074a7a83feede0ad321749b2dbcde82739b9b99e
+8e11429bdd67df452a9ef4962a673362d372a3b85162a9c3d93102227a019895
+b9d37d26af956539c9714c59179bd4b113c66f82c06e6e5ae3e17b055944d780
+81afec9df5be85b6967269628e1aeb58710195a15de28ba891b900421744af20
+a130444a2a6e7da7f1a386d068834a3ae93e8d5ba3d4839d0b9c7450fe173346
+0daceadbdc097169bd90f9a18712565b13a8b16dddb2edc8ebeb10f9585a47d8
+b37581ac56b57c81a575192490477776b32573a9365641091e5d3da317d5b58d
+fe4ee0690c671a5d462f896613d5c1fef5eed1111bd01169c3ebc811e6089eb0
+bc48526d400bed82e718168a28b671815a2f4d0c861e00dcadbc86ed47c908f2
+e97d6e44b66d8e6a8b2689c39af9b96f950014bf53ea88bc52f988a0d29567c1
+f4ae2403f65952df0f34da2884c6e4fa71346a284cc769a0abbff491dc968d1b
+691e107728e240ff2742718ce00c973e301c76cd4205b39f934366be564bca7f
+1029d3b701b958476c4584e6e12c1ed55b8e98daa50715b40057031cda967f96
+06e0910a6fac8549ad6fcbd4a043301a75be14376a48fe2db4f54b3783417532
+cf1db627bc716ebf4dacee7c56c20d054f951b6a9b3ad47cd3c4cab112821da4
+1ad08a5a0321160aa18bde9fc79f634bbd3dec7f174477d52962c399bd83488c
+42f3d30bea81e85f966deba2379e802b63b04e251aa7b19ac423a7c802c8c827
+452043c544c292c5ead34d208b6ad7136db65242fdc989de296137bcab35e2f6
+5625603373b65b071b644f640b55437bb29947e68617867bd26d09b86bb32469
+17e4a2639ccbc04d0278b67b0dc5445d40260cbb14aedc0e6c0f418c70e24599
+8bd396380dcf754580a8d8764f5b46f1727ea799d7a01296300c595a047e48fe
+441f127bde9f61cc28801d84f23ca185632957689b2ac8a2eac9cdf269362502
+e9ba3223e97010e15f14a2eef029dfe1ca8a2322fde50cfea0122b34f24f3637
+07fe823fde15f6e8e2b40622d60226de7e6ee0853cd3cc5976febfed58ddb085
+4f45b331820cf28508ee6242227fbd515bb22d9a0edea53549b41c8bd6757073
+8e3fa4c40e07d7c0558ff39de08d4effcafd874e04bd1d711b80ad1c918ba580
+2c98bd7fb6ef270b32a1c8aed92a43e6e24abbca9fad7ef6defe9a1c7f5b2d4f
+e1a6028791f12222649e8502bfd33329af6a2e07dc77cef11298b5fd68be35c0
+44eca85478799cb3b4d196643ef39a05ea6c3ec407c45289bdcf6591bd805ae1
+50bf98eb38a6d93a6a1d7bd8e40e6b2dfa519eb853ab81f44ff9c64ab482536d
+e3dda61aa575cf84bc45faca55a6935e84b709953a1c0eb787cb8fac66aed110
+8431bb0eac4027b61057603c7cc605850ca82d865170c6fe59145a669871e54c
+38c147347e96169aad1ca50bd5b4cbc05841d9d530bc21c8365ef44178da67c4
+83531420e8c8a4db99638f9bb24ddc977c57deba9afe21aa37debb7680626885
+a3e9fb472a5937783a454b91a53b1aba436eb3f9d870163cb0d22efdbe3b3992
+42a2f9a859d457d6bc0dc6f4305e82d46d5268ad9ff34c36b971b656fd2552ea
+4a2913fbb341e2d384dad302029873fa198577d2470aaa87d94aa85391a6987d
+03ccaae22907cd40988060e66ed0dec2ad9e79cd5b7823755b7a98dd3d098fdf
+58b3e6045690f1ba4194ba5f4410e67968b94c8bd855e04dbe685aa5d681d410
+59116588ea3817da62080af7519ae9386b59e2b89dfabe4426c7a6cfd3e9b4e7
+54794b34727a8e54ce080024fbad4d95caa03df42b3003d639d5927094c9f4a5
+e574e377b8da1d59200ea69bf2f62634fb6e1a22dc4493f5434bdbe2e68b4d05
+c6f7113909e39bff94133f7931c6aae6dd056d7373164b5d766c8504209cbd46
+d9ac7c9c656ee9b2f04c447c4ed121f1d256d358e6bdbf2daebc56c4c34c7ad3
+0333a878ecbc9880bf0db7746063c64b796d807992e9c9410ff1f95452f26280
+06e88ef82c23ca950e2e4695de97c6e72335039fe30d5447efec01f02b106ff2
+5d27cd758357c93b05565f33ffff0fa5aaf99ea70370b3f79ff30e463dbda78f
+d7026ab89293841096850f934c079d885cf70abab462223ab9dcf4fb4e0501db
+d6356fa01db984bfccc5cc7f731ed1122144b14cba85d4eef8e433c498e2832f
+9cf1cbcb481ef3462fbc845f5697c55b076dac29cd557f7fd7f9c02732eca224
+455663f1afe88064867f72405a4292433cc47fd80839025612fd3bf7a6f22837
+3a560403d7aca3042e82b3283133072409e8de398e35c51fa771a53f316df0fd
+a20179a326d7b2992209bb69428217a549250962e27530165b941c9ac2eb5be1
+97e2037561a91e3d902c8b093d8a67b257e50da6bad863d3ffe54ea0f10a6152
+6e7ff8b1e122a9cc83d03cb4503d359d4eaac9bbd389577a96fecf28746d21d5
+9146db3d844fb193420c9ee11a6fa207bda405dfc62f86f0f17546f327d91f43
+5eb0981802b0470377f9194024f78aac8bf781e97c241cbfa3a4a06bc201e559
+a2c6fcdbaaa1ce6f4dc79965bee2fd595d37a897e08fa8a40f8ef9d6a84175b1
+650024f408779528f84ceafb189a3905336ea5fd0d79d5dd0549b9356f6ab4d4
+089899aed13f47c34f3c26c9557308a8e4c01c1ba7c5d74c325c2edd34111d45
+b95bf5f19b93d43386bb319da81bc83e731708477fddcc6e29968f74ea987eaf
+9a1a70068429f9d10917da60337c90b7f26678668f766e3e51ed56b89e6f716f
+203780ad67e0ab6e8b5b5ffcd9bb8b50fb31d40db4072746b26efa7109591027
+21a556c6811df8a691e591e02c1de457a093be6771493a4a39f6a1f41216c3cf
+38f9088649cb79c80201bf13bba5cfe7638497bab1429bed37ffeacb27b4a72b
+e9ba675fc493490c75f300af30a9aa80852353023813d9b3979822a7c992fa84
+06b28785ffbd5fb41b074d380ed934393e495ce6cd84fa2c43d3f6b5020b4edc
+8e93df7bed371fb9976254e59016fccaf3d6db20eeef6ba7daaf6a44e2e3c661
+35b47ca8e99184475bba9986f29c58b59c8ebaceb2714a8ab3c8abadde89af7d
+f6f538677bffe3608c1c0ad820c72449cc1cd1c06bf0d57f9d9c38a1c5cb7e0e
+8af5bb107de8cbf9882c8f96122c02c5e28176e93b262cb33a2512e71653cd72
+593cff4106ffb62f2845b538f3692bff06651090d57e9a15d5a1f8162d6afc24
+eb5def424bd2dfd678c736bbd79903249dfcde63c92c2a1788aa109de169996b
+6dcceeed0d7ba3907f47485feb8909848c9952ac9b84d7736acb6428244f8ca8
+d25378265f541c6b974910c9f4fbd7ca2071a5c8b03c2e357626a72787f303dc
+0c36745c27488301308f450a7b5f4d4784c268bf423eb8cde96c7e8fb44a4588
+26868c0b297bc533486659515793a68d7dcf27d1dc1e79b748cdaf83dba907e5
+4613f28b1b3e2a678afb8ce8c7a4f607c5445e91646601d99b3f297b6379bc75
+69dce45f31dfc0c4f0b19980515fd0b8a5bd6d39354ee322d1fcdcc5ab5e939a
+9aa51f8bf9d41deae8a1b4969dc456918b73e7b573fe68a2662839c1d479342c
+06d2efc02c8b99c6a60130ae655fe06ad747177a495f8e485ee2c8500ea60f08
+d4f3b1c99202fabb892988ab3b4d8ae4cc853eca69222d5da4acb69c407bbb44
+28073bf1c3178fe7d92b17210093be90f866c0397815d910cf99c93755d3a587
+a613da47d0fda8fdec629d2ecf77887cc0d7d4dfad7e12f75e32a14be220f76c
+101deed84bcfba537be1e389cb7b3ac270b4b1e8cc20a789e22a117b6f13d05d
+3892a5b4db1159291478e9b979587a82d7a96bbddf3300bccff0c11f931bed5f
+6fe653e18d971ed0daa113490f0d472fb280c15568ea5cad8a139f2fd90fc96b
+10f3df7f0e5efdf68893307f62abdc01bda07be6b1460d8c15d34ee7fab17b34
+04c1f16115726b289b36e778a53b7970bdc57cf439ec3c55a519fa0869c3fd2f
+d4464c34fa424214f0c1aa7c29eaa6e7c26d68a73052e4a5268c007afacbe7fc
+ae136f3e623afa697a1327482d5d760245c64802703fe005c1ac92c82be26de2
+05c1bcf64f6e5bc04e20c404f3a4f6c7192f29cd75867bb4bc2e7aceaa0c06b5
+52b5f73eabe1647dd7f9e35af6e433036caf99a9f6465625d34f34891a11c488
+93537c3e030a29916341f41fda8922bf6c0228d6f0b917e113e8f1ed81a284c9
+9ef66c8c3f0965d323193e549288045e92bd9222577ecd19396ecd1287a09cc1
+3db78858ae691e5847a1b8f5108b8b5c84fdc757c887a33f960d7e2f52bf1988
+3d0ae3022de0c786f3b48e01e58fddd613f470cb6330fa2495a15080e7b2b4b0
+5695b7e24fc02ea02d08367db7e66e98e373912dbc270488e76da8afbb55a842
+472b75d97410d21cd723a6c3b22fd392ee4b39d11966c1bf7af628104e44ebc1
+7be59dee34541e1166148e867a23a1bfedf4a360865b788f34940f66906c93dd
+8a00beac015b7bab9f5ed7414182e30af1536cbd1620687a953026af9cc833af
+f4e5cf24d02e1a1b85c1867e9874694a342ab13d1b20985e0ecddb98aa557621
+153343ee9c6cc5daa49dba3fbc107b50574bfc7b884c1806618b9834acd27453
+a7f16384a4cc873481db790f04369984349684c2f90915b3feb6ae28c01230bf
+e23153c6062877197a26388618964f1a29d128a95f3a427ebae94d525f9a1000
+43606c061e4db54442b0747f3d6f264da95ec8ca864d91e170e0fd982be2a569
+54c0d903cbc0a1560ca6a4a250a6f75ede63dcf7154945595eea75161cc72f1f
+da7ae1202520253daa7cb782afcf396306c75ab2a217a18e96818f937b39556c
+f64376cb0e31ecfe0a16617c5cebebe53e6cf0148a84a982a94fee94e55ec4f1
+da2fdc31120b643413eda15dfa41ace1e93791550aa06695ed7e3b790b17f82e
+facddda69602839853c705ed65dd8d0e41905ac7fd5f53a1faaaeef9a4f6a265
+25c2654274ac92bf0addbed5484bacb549300dd390fbdccbd8fca3cd0c6fd046
+13c0b779c7231447cad5d83b19ca4bb8491792b601e8c2539b70c880dc3a6a79
+867efc5e24e1b46757b2c3f66a99b10da46f2822d41fe3fc0723a4b79fa73973
+9949f78fbd4a6752f515f3a6ff9e7cc7bf7486c6945b045d1e6bc03fc9810cc7
+4a0998eede4855c43f3af3f9fba3306d4e074d220e0bca1481e1edb55f27d35f
+dd5cc2409f76fe81a2cc9d06abe5577afee876f16ab6c8bda7111f937a8b6067
+26361c371ed0e5b63b344accc21d2830720451fb50d2b9e415295efb55f456cc
+ea580600dcdefafda583aa7bd1c665135f691d38398fae14288c470f49125ecc
+1d35fb7787779c16f05f8df48bd58d439396a0f0da9a31b2afc7bccfd2eddaa9
+6772b7dc7e9c78c58cddedb7684d41c2e8b8445b6feeef58c82fd7fe22dded02
+8ed17b4d71c44db25608c3512b7ce80f1eee3e06d77b8bda2e9fe518675831c0
+513b33c326219cf5ee4cec6b501ca349f7b07ddc182bb9b22b323ea46a2843a9
+932c1092a5445ea5e2b9babe98c1f014a7edaeb42e15bc412d7a6d0da0c52bd5
+f132710c66a1bdcd3115d638bbf83f3e6e3981215034bc148f37e0febac05729
+0006ac280ddbe52850b674ff701fa267c545420635d244fa165ef8f058200a72
+ee806d96911a20f5f7002a3e10241aaeaa958d8d5319b874c8944e0bfaae82c9
+dba52570305328c8708687f1331bb414ac14a6040c0bb535d87a9f5cf0943e0f
+3ecb0acb9235510d1e374c1375cae09e2fb06746e54a4ddd0a489c96e7df8855
+4bfa90e3d223ecc11d524dc910047f0b78da26874446a5f8814cb33204c686b0
+b6aab8dc9e5db356e52ad946b230a93cdb4d0559d003a7fbf661498fc8f2c535
+aab2b6f95c6937477f2d3e1b908ffdaaacab7f5448d4e9fedb4609ac1098d2a2
+59961700a3157675a7ae8fccf3c5d8c4bf4bf42f24ed53f16f2daf69a9e40acd
+3202e388f59cf1d74dd8409c90ba324aaae1cfebd3dcb0dd05a8dd8001b14a06
+df218aa3f1e3a3a7fd86e735de79a094ef446e197c6adfd6b5ea68ead10e82ff
+0849887cf454ba71803dec7cf48bb18f3e8ad69f6b2193eed1a4266bced8dba1
+d634e3dd6e984c897cbed6c43a56bf18d9015ad42a14fff47616a50c8293ce8e
+f03d10412268560714a5896a07df759f9990c989fd1f9361c8092d63a73d92fa
+09584b722fc901d5ee3f8df884a74baa71e46f95b7997783edc4d5b32ac2e459
+face2e55b1717cb52db3ab2a8debcc3a125979400e934c79130e18e27d0450e3
+85d2a46d5dfaaf2402aced2fba176bb3e82c1c43455656b8b4a75a9c159e7a41
+0b39c51d067391d3bbce4a505cc8c3c5aee9f8da3e4521c441da33270f51a334
+643198edba8eea440e3f4e43169d634c301f3f1fdc2fa808f1904d35933e0fcf
+12a741e08a43055deb9a98b922903ec92cfbd910a9dd051070d2f451f3b90368
+449b50f78ee476dff0f16cd038783e1e6ce8e3bcd2a39c440162ba6e2eee1cf9
+bd7c590ec295dd1ddf8e9aaaf9967823f9ead1a3f628bc89b16e4b7cd7863147
+234b266b24519e770da4af598c9b1f10f0ceb82c64c8701d93bcacb26aca0a1f
+97e5e02bac74885f6895b2a0ad6e3c53e6b8bbffcfc3fa210248f6867af0325b
+7061fd05955670fcc04b3403a0705460e9966e27e7b1850e13b2fd7c50f42946
+ecc96b07ca48467dace1760c4715d7f4f3022a5fccd58d9148ccad99da4e721d
+725b720e33855281afa0b301df829b6ae46813a6f95e8712b6a6118162868a4c
+a14baac4f26930ee7f953412c2194790a2d13932c9b114ca809c986d7e23f4c9
+86816d878fb5d4d4b2300a3fb9db39846d7362e003ecf90bd8b0c62dbb4570a2
+d42fb556948ed918354014b6d09490a9d0464bdb6ac8ca756546d43b2586d6f5
+fe6f5c31d1994c1f35b7873945689d4a3e18e1151f9781fa4e9553985c2f181e
+29675859e54ae1a3ff2d88516c687acf188da8c6ccd7c51a5bc1d0c91a29203c
+d1bf0451b3957a7d6691f5932e98a8d15cdeb860e499b296fab092d69ec8ff7a
+58e8b9a9da1ccec31bbd22e53713a493bc816ddf3453cb1219a0bc81a7a9f32e
+d891e5df6f5848d52e9e471f9550940029f680aba8d299eb631d0df1718c393b
+511563f8d864640149efad77bec353217f0b6648496b244dd66fd603d0eeed00
+f121e7d5d878625bdb6d70ce0b40652555e7bba1ba2cff0ad46b6a0015831173
+21d81a2db568a8b0942616d8992fd064f69af1a8bba5b32cca72e95c959a1739
+a6fc725e6cc41ee3d1ed2548c42fae4b0328e1a7967bed34eac5a6e2876480e6
+da3645b27cce2c7a95f7aac5f5ef880ee90caa52aedf563c54595b8c6e636191
+b1cdf90384ebae765dfd083670c2d6dedec1138ebaec9b73ac165b882a6269ec
+e5718e3834fa292b076f1047116e22cc0bf83007356900971cf49b8dc68acf65
+1ce8ef4f84911571c0b6f9604a5e0c648f518df0205c0292015106e9a43d5d19
+14611bb99953aaf5dbd16fdd854234a501b606f614bdea8d0b5e8259e38c4402
+567885b2bd5cd02c2d3190dd1bf5fb87b6ab5ad4449d7a1dbe392e04699b770a
+c9c40615c92b881c404ae6350b700037b50e8173d0d3aba57c142b31e47405e2
+e9d93b3e735d58beb282f243adc277a41237f19d7ef9cf3738655cbaef0d1ad8
+f0e4e3b1a92830d879672aed18e6bce6d00d30c17c6a0d4a3fc00a14867813cc
+c6289caa2e7c4dfcddf1e4092868de2cd6f7f277efd2ab1b3a5a9d5d4e5ac046
+d891c6c11706092b43c235d82af942166287202652726fed2e12257587e22656
+301a1df5a9a8cc4323b8a4a42634db7d72ffc435e436ed04802a1f8dd15f4740
+1199fe57a159e463d700974c8024eeb0bbe6f7e31099436b7f6b560e7a239c8f
+1af8b5b790da2abed9ec477b6a58bea9e3dff39d025ea5cd9386699883a6a35c
+4fe2bdad510b226ae56c7c6f74f1eecbd9fb06fe44e53c79c8cf93731ae8b8ea
+cf92bedf19bb9206732cf31223965b74803ff7e8f3380c3b10e1302c70d9dcba
+2b2eacd615918a6959df3e669cdd883d8357a6132dcf1bac1c3f2ea9353cc6b3
+c28efba2751b759158a944ec83fcb26003366a9ac51373bbddcd34605abb2a0c
+a62798a0a000aacf3e11370f1b0e6347d15f645245e2790e53060bbe2ff52dcd
+c5c7cacd5ea32f28ddb3086ce9e6ff8725d0680dd741fd3d7af8fb713b16637c
+5e3abb7c65e80cf76ce31d1ba3b0659e6787b003cc71581581eb275ccd70e746
+076208dfabf89721aecc4321a3f0a7c35cc6c4f5dd025113a94ba4585784b5fe
+91e50caa8fdeca0167cd45d027e4b38ab77175ce190a1f380466355a501176a1
+843728babf5492ddec13378b635b7332c3e533f828c12d37deef1446fb27523b
+fc22354c0d75bf2676fe765fba8c7d7fd3bb9c70067b088b3ef71cb7ffab1b96
+03ac3fcf15e90ec3e7e2acf8995e1bf694945d96739213a77b9188d5925ce3f3
+b9bf0bfbc5cf0e32b98c4768102775c42378318f4fe3568d8c78fd2df7396629
+1ec2eb50d64591961bc9c40b1dbe23a3664307cd343807acbf1890c0c8321cf7
+e64956e1e3d0e7d66d433cda277ca6979e9a0640a365c1acbac79e2824bc57d5
+0a636af57b4f11586bd08d8a805c1e752aa811204028b971be4737ad9e4f7a3e
+3bde6c6d163fa5d004b31466b266ae30a8477491e4837008f13a61ee2c1398b6
+ed006607f53810f0f6d6c1abdfebaa83930d726e81226e6194fbe0261722adfe
+5e66874c8568ac2ee8493069619b55db3e53ef7fcc9d5c86b753aeb1b175922a
+6605772f885fc816e533f22033df5567021f14022e4182a862f5d0a87d2356ec
+6ee2dff14d1d663f0b813e28df9adfcf32777c566b3b79bf755587a2b5143435
+6d84520ec9a616bbc0e7f6030b0c86a02c87cb0fd3fda5f311047ac4032f691f
+20c47ba9b6c6b067ff74a7cbb159cec0e56eb3997e7f5ce93f5164ae502db4e4
+65ce3ef2b61a1b142334421b801907f9720856e86a73e8c07c82ecc8d0788b9e
+b179825fd37034e6d6b68c2899e324410861b29752ae153f637b149b7119a6c6
+876b51c642b716b908303f618ef834536599b97b31e86affd18f7534c82a9a7d
+7f6e8601959e8a92d6f2b8bebad2cd921eef5240f88bdce89c9c2275ce6a375b
+8949771d226b8a66710131858e9ab659727420068241d5dfe7a12d83dfc569f5
+8f33e57803ff070be1898e723ac52dcc8337ad97761e0f782081bd8d16b3102c
+c48daff31addcc0119dc2cb9fcbf4b55f29be768c53c22e1aaecff3ca0dcf3e2
+245c5b2811ba4e76fb2ce2ae57abc0105de90a5e199db05868db68c698cc5966
+130fd028e8937e31bf615ebe79dde89191b0193a7a0216351cb2134041a33dcc
+5ab93bfd8b947abf58e4dbd388df1f5213d7129c4fa27b55df4f136f908c9c25
+f507bfe8e9356c0598a195c4e5a94892cef980fe35cd9db40c5175a634501b25
+a4c1448546dc8f03410e38596bd797d9e0c13a58ad32f65a80bcc8306783835b
+fd8b710fa3564715ee330b167525b880171615cb5ccb1e952392c45b01814cca
+6e59cc5b8f9f544905a9003aa80cd23df9f6cdea392ae3e36a245ae8f5f9ce71
+044e6762b767c01138d9226af42c556fdd96921a237c9a46f8406e835561cac9
+071a5abc57dc288bc23f852a7d5d075ba2f4376a0302165d558c42e9cadbe092
+20c854c15afefa6990d522f81340fa8021ee2eced7067dc35a6b369256a7a997
+d09163d055fc3f0657df250d55f084ad3252b0df01ff5fcc467cabafd98d7523
+87505bf3400b7a8d56a49a47f19dbf99ca0c5fbb4a6be5af01b9e357b09ccf8e
+23e2ebc433f2a38c797a326da842980678fe61c8379f2cf62cd752efbb61b286
+55e5d7b0ef03e927057885975c90b490974e4b449392711de39a51ed4ccb5a96
+2cf62a8e0258c92e86345a61e7656eeb1363c62b3a931853ef10553b77e90956
+d383433ca4dab2ea24ac925e330b3b42448322e40a0b3b02a5d581d85ff9266a
+25bd29b1110bf0bd5447e98189d2d5ac4da0a3ec061d70fdab59c9274810ce31
+f55eda99aca005a6a4df518aaa9137310a3d37ad8f13ad57a4c8ea4e7339d020
+3f514e0db6e84ffec7c6da08db78157e65f57eca4959f662b6ef396eda957b12
+df051336e18284cce343e19ada4d90cb15674bbd566b5e4de021d244768d2105
+75c4c035cccc32e9382e86f94850fc2cae03cb135cf408709f04f0b2f257e7b1
+bb2986637fc2cc1dc48804cd7228368aee4b20951473f055ff9d765086cd03fd
+eeeaf242f4c80fd4cf0cfdb6deee2e68b03220d5930e8f5e0d333cda6aa73a1d
+731d174e2ed67a1cf887a27d83adf8d58687ede51b474d85933c2bab1db1cb90
+828e0c29b83b83f8a997e45d6777c261d0a87f99d157ec6ca7d9cd92a09fb880
+5a22f755a137f217b546135ec06180bc9ac86ad19f022877008ff47e53ee8b9b
+19133d713bc6acbab922499a0cb81ebb1e3078fc7ab71560af95e4570b0f651c
+f279ed3f86cd0cadc8d8e6fa664cedca0dad28fd66975bece664ee0c708491a9
+f4a4d964dc6b65c941d836cac98a18ea7f0bbfbab195e608f6245debababfc7b
+c13db9d5ba4ce29f7f259bf16f4b6a8c09516dabeda2174c179428dfd757105b
+f282857edfe667c1145feebfbe7a447f6303a8aaac53ad8bc0ba7b40104003e2
+a0a217b395adf550ef6dc3b4459f4e2588a7995898b401271289f4c7d9bf53e1
+cfe1153f8755266f482c7a55bd3d85d2d470d5e8480b6767c789639926837ae2
+b8af87b689616cc1823d9acd93a490f1e91c63ea45451fc7b8999365a961d483
+5559bac3709cfdf5983d3e24a37011e8f12124de08112cc626ae8affbec4ecc4
+22b457e36661311adddae5e6aa6f5b63919b258f95c55fa33e19e47226e4faac
+Waiting
+Podman
+Pynamic: Version 1.3.3
+Pynamic: run on 08/19/22 19:31:10 with 16384 MPI tasks
+
+Pynamic: driver beginning... now importing modules
+Pynamic: driver finished importing all modules... visiting all module functions
+Pynamic: module import time = 2.98690509796 secs
+Pynamic: module visit time = 0.134879112244 secs
+Pynamic: module test passed!
+
+Pynamic: testing mpi capability...
+
+Starting computation (groan)
+
+('Header length is ', 54)
+('BMP size is ', (400, 400))
+('Data length is ', 480000)
+
+Pynamic: fractal mpi time = 2.34015703201 secs
+Pynamic: mpi test passed!
+
+Time: 0:22.71
+Cached
+Pynamic: Version 1.3.3
+Pynamic: run on 08/19/22 19:31:51 with 16384 MPI tasks
+
+Pynamic: driver beginning... now importing modules
+Pynamic: driver finished importing all modules... visiting all module functions
+Pynamic: module import time = 3.11284685135 secs
+Pynamic: module visit time = 0.125158786774 secs
+Pynamic: module test passed!
+
+Pynamic: testing mpi capability...
+
+Starting computation (groan)
+
+('Header length is ', 54)
+('BMP size is ', (400, 400))
+('Data length is ', 480000)
+
+Pynamic: fractal mpi time = 1.69623589516 secs
+Pynamic: mpi test passed!
+
+Time: 0:20.11
+srun: forcing job termination
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** STEP 3020091.21 ON nid004942 CANCELLED AT 2022-08-19T19:32:37 ***
+srun: error: nid004981: task 26: Killed
+srun: launch/slurm: _step_signal: Terminating StepId=3020091.21
+srun: error: nid004967: task 12: Killed
+srun: error: nid004974: task 19: Killed
+srun: error: nid004975: task 20: Killed
+srun: error: nid004988: task 33: Killed
+srun: error: nid004946: task 4: Killed
+srun: error: nid004990: task 35: Killed
+srun: error: nid004979: task 24: Killed
+srun: error: nid004992: task 37: Killed
+srun: error: nid005017: task 62: Killed
+srun: error: nid004994: task 39: Killed
+srun: error: nid004965: task 10: Killed
+srun: error: nid004984: task 29: Killed
+srun: error: nid004942: task 0: Killed
+srun: error: nid004968: task 13: Killed
+srun: error: nid004999: task 44: Killed
+srun: error: nid004982: task 27: Killed
+srun: error: nid004989: task 34: Killed
+srun: error: nid004996: task 41: Killed
+srun: error: nid004985: task 30: Killed
+srun: error: nid004986: task 31: Killed
+srun: error: nid004993: task 38: Killed
+srun: error: nid004964: task 9: Killed
+srun: error: nid005019: task 64: Killed
+srun: error: nid004960: task 5: Killed
+srun: error: nid005009: task 54: Killed
+srun: error: nid004943: task 1: Killed
+srun: error: nid005023: task 68: Killed
+srun: error: nid005037: task 81: Killed
+srun: error: nid005190: task 232: Killed
+srun: error: nid005142: task 185: Killed
+srun: error: nid005095: task 138: Killed
+srun: error: nid005029: task 73: Killed
+srun: error: nid005176: task 218: Killed
+srun: error: nid004945: task 3: Killed
+srun: error: nid005026: task 70: Killed
+srun: error: nid004978: task 23: Killed
+srun: error: nid005034: task 78: Killed
+srun: error: nid004980: task 25: Killed
+srun: error: nid005097: task 140: Killed
+srun: error: nid004970: task 15: Killed
+srun: error: nid005111: task 154: Killed
+srun: error: nid005136: task 179: Killed
+srun: error: nid005015: task 60: Killed
+srun: error: nid004962: task 7: Killed
+srun: error: nid004969: task 14: Killed
+srun: error: nid005067: task 111: Killed
+srun: error: nid004977: task 22: Killed
+srun: error: nid004972: task 17: Killed
+srun: error: nid005168: task 210: Killed
+srun: error: nid005010: task 55: Killed
+srun: error: nid005121: task 164: Killed
+srun: error: nid005018: task 63: Killed
+srun: error: nid005166: task 208: Killed
+srun: error: nid005033: task 77: Killed
+srun: error: nid005204: task 246: Killed
+srun: error: nid005144: task 187: Killed
+srun: error: nid005042: task 86: Killed
+srun: error: nid005061: task 105: Killed
+srun: error: nid005208: task 250: Killed
+srun: error: nid005027: task 71: Killed
+srun: error: nid005192: task 234: Killed
+srun: error: nid005163: task 205: Killed
+srun: error: nid005036: task 80: Killed
+srun: error: nid005134: task 177: Killed
+srun: error: nid005184: task 226: Killed
+srun: error: nid005161: task 203: Killed
+srun: error: nid005003: task 48: Killed
+srun: error: nid005120: task 163: Killed
+srun: error: nid005072: task 116: Killed
+srun: error: nid005092: task 135: Killed
+srun: error: nid005123: task 166: Killed
+srun: error: nid005002: task 47: Killed
+srun: error: nid005021: task 66: Killed
+srun: error: nid005211: task 253: Killed
+srun: error: nid005103: task 146: Killed
+srun: error: nid005128: task 171: Killed
+srun: error: nid004995: task 40: Killed
+srun: error: nid005014: task 59: Killed
+srun: error: nid005028: task 72: Killed
+srun: error: nid005096: task 139: Killed
+srun: error: nid005078: task 122: Killed
+srun: error: nid005012: task 57: Killed
+srun: error: nid005178: task 220: Killed
+srun: error: nid005179: task 221: Killed
+srun: error: nid005180: task 222: Killed
+srun: error: nid005157: task 199: Killed
+srun: error: nid004987: task 32: Killed
+srun: error: nid005098: task 141: Killed
+srun: error: nid005135: task 178: Killed
+srun: error: nid005203: task 245: Killed
+srun: error: nid005162: task 204: Killed
+srun: error: nid005016: task 61: Killed
+srun: error: nid005212: task 254: Killed
+srun: error: nid005086: task 129: Killed
+srun: error: nid005129: task 172: Killed
+srun: error: nid005155: task 197: Killed
+srun: error: nid005082: task 126: Killed
+srun: error: nid005175: task 217: Killed
+srun: error: nid005170: task 212: Killed
+srun: error: nid005043: task 87: Killed
+srun: error: nid005044: task 88: Killed
+srun: error: nid005063: task 107: Killed
+srun: error: nid005210: task 252: Killed
+srun: error: nid005102: task 145: Killed
+srun: error: nid005048: task 92: Killed
+srun: error: nid005031: task 75: Killed
+srun: error: nid005160: task 202: Killed
+srun: error: nid005197: task 239: Killed
+srun: error: nid005040: task 84: Killed
+srun: error: nid005071: task 115: Killed
+srun: error: nid004963: task 8: Killed
+srun: error: nid005213: task 255: Killed
+srun: error: nid005001: task 46: Killed
+srun: error: nid005008: task 53: Killed
+srun: error: nid005070: task 114: Killed
+srun: error: nid005193: task 235: Killed
+srun: error: nid005005: task 50: Killed
+srun: error: nid005171: task 213: Killed
+srun: error: nid005099: task 142: Killed
+srun: error: nid005118: task 161: Killed
+srun: error: nid005131: task 174: Killed
+srun: error: nid005114: task 157: Killed
+srun: error: nid005164: task 206: Killed
+srun: error: nid005189: task 231: Killed
+srun: error: nid005141: task 184: Killed
+srun: error: nid005167: task 209: Killed
+srun: error: nid005119: task 162: Killed
+srun: error: nid005035: task 79: Killed
+srun: error: nid005030: task 74: Killed
+srun: error: nid005183: task 225: Killed
+srun: error: nid005038: task 82: Killed
+srun: error: nid005173: task 215: Killed
+srun: error: nid005076: task 120: Killed
+srun: error: nid005108: task 151: Killed
+srun: error: nid005188: task 230: Killed
+srun: error: nid005000: task 45: Killed
+srun: error: nid005080: task 124: Killed
+srun: error: nid005094: task 137: Killed
+srun: error: nid005143: task 186: Killed
+srun: error: nid005077: task 121: Killed
+srun: error: nid005066: task 110: Killed
+srun: error: nid005049: task 93: Killed
+srun: error: nid005032: task 76: Killed
+srun: error: nid005100: task 143: Killed
+srun: error: nid004997: task 42: Killed
+srun: error: nid005084: task 127: Killed
+srun: error: nid005054: task 98: Killed
+srun: error: nid005073: task 117: Killed
+srun: error: nid005087: task 130: Killed
+srun: error: nid005057: task 101: Killed
+srun: error: nid005174: task 216: Killed
+srun: error: nid005138: task 181: Killed
+srun: error: nid005139: task 182: Killed
+srun: error: nid005201: task 243: Killed
+srun: error: nid004971: task 16: Killed
+srun: error: nid005045: task 89: Killed
+srun: error: nid005113: task 156: Killed
+srun: error: nid005205: task 247: Killed
+srun: error: nid005011: task 56: Killed
+srun: error: nid005165: task 207: Killed
+srun: error: nid005007: task 52: Killed
+srun: error: nid005039: task 83: Killed
+srun: error: nid005156: task 198: Killed
+srun: error: nid005132: task 175: Killed
+srun: error: nid005200: task 242: Killed
+srun: error: nid005159: task 201: Killed
+srun: error: nid005147: task 190: Killed
+srun: error: nid005051: task 95: Killed
+srun: error: nid005198: task 240: Killed
+srun: error: nid005169: task 211: Killed
+srun: error: nid005145: task 188: Killed
+srun: error: nid005116: task 159: Killed
+srun: error: nid005202: task 244: Killed
+srun: error: nid005148: task 191: Killed
+srun: error: nid005149: task 192: Killed
+srun: error: nid005126: task 169: Killed
+srun: error: nid005158: task 200: Killed
+srun: error: nid005207: task 249: Killed
+srun: error: nid005154: task 196: Killed
+srun: error: nid005069: task 113: Killed
+srun: error: nid005186: task 228: Killed
+srun: error: nid005150: task 193: Killed
+srun: error: nid005091: task 134: Killed
+srun: error: nid005024: task 69: Killed
+srun: error: nid005050: task 94: Killed
+srun: error: nid005124: task 167: Killed
+srun: error: nid005137: task 180: Killed
+srun: error: nid005090: task 133: Killed
+srun: error: nid005085: task 128: Killed
+srun: error: nid005104: task 147: Killed
+srun: error: nid005074: task 118: Killed
+srun: error: nid005081: task 125: Killed
+srun: error: nid004991: task 36: Killed
+srun: error: nid005059: task 103: Killed
+srun: error: nid004944: task 2: Killed
+srun: error: nid005195: task 237: Killed
+srun: error: nid005172: task 214: Killed
+srun: error: nid005185: task 227: Killed
+srun: error: nid005107: task 150: Killed
+srun: error: nid005041: task 85: Killed
+srun: error: nid005152: task 194: Killed
+srun: error: nid005079: task 123: Killed
+srun: error: nid005068: task 112: Killed
+srun: error: nid005088: task 131: Killed
+srun: error: nid004973: task 18: Killed
+srun: error: nid005022: task 67: Killed
+srun: error: nid005194: task 236: Killed
+srun: error: nid005153: task 195: Killed
+srun: error: nid005062: task 106: Killed
+srun: error: nid005191: task 233: Killed
+srun: error: nid005064: task 108: Killed
+srun: error: nid005047: task 91: Killed
+srun: error: nid005133: task 176: Killed
+srun: error: nid005122: task 165: Killed
+srun: error: nid005093: task 136: Killed
+srun: error: nid005075: task 119: Killed
+srun: error: nid005052: task 96: Killed
+srun: error: nid004998: task 43: Killed
+srun: error: nid005115: task 158: Killed
+srun: error: nid005006: task 51: Killed
+srun: error: nid005105: task 148: Killed
+srun: error: nid005130: task 173: Killed
+srun: error: nid005101: task 144: Killed
+srun: error: nid005181: task 223: Killed
+srun: error: nid005206: task 248: Killed
+srun: error: nid005177: task 219: Killed
+srun: error: nid004983: task 28: Killed
+srun: error: nid004966: task 11: Killed
+srun: error: nid005058: task 102: Killed
+srun: error: nid005199: task 241: Killed
+srun: error: nid005182: task 224: Killed
+srun: error: nid004976: task 21: Killed
+srun: error: nid005056: task 100: Killed
+srun: error: nid005209: task 251: Killed
+srun: error: nid005046: task 90: Killed
+srun: error: nid005065: task 109: Killed
+srun: error: nid005109: task 152: Killed
+srun: error: nid005055: task 99: Killed
+srun: error: nid005117: task 160: Killed
+srun: error: nid005106: task 149: Killed
+srun: error: nid005125: task 168: Killed
+srun: error: nid005187: task 229: Killed
+srun: error: nid005060: task 104: Killed
+srun: error: nid005140: task 183: Killed
+srun: error: nid005196: task 238: Killed
+srun: error: nid005112: task 155: Killed
+srun: error: nid004961: task 6: Killed
+srun: error: nid005053: task 97: Killed
+srun: error: nid005127: task 170: Killed
+srun: error: nid005146: task 189: Killed
+srun: error: nid005020: task 65: Killed
+srun: error: nid005089: task 132: Killed
+srun: error: nid005004: task 49: Killed
+srun: error: nid005110: task 153: Killed
+srun: error: nid005013: task 58: Killed

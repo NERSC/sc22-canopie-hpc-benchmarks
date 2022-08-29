@@ -1,0 +1,44 @@
+Shifter
+Pynamic: Version 1.3.3
+Pynamic: run on 08/19/22 17:43:25 with 16384 MPI tasks
+
+Pynamic: driver beginning... now importing modules
+Pynamic: driver finished importing all modules... visiting all module functions
+Pynamic: module import time = 4.29368901253 secs
+Pynamic: module visit time = 0.161866188049 secs
+Pynamic: module test passed!
+
+Pynamic: testing mpi capability...
+
+Starting computation (groan)
+
+('Header length is ', 54)
+('BMP size is ', (400, 400))
+('Data length is ', 480000)
+
+Pynamic: fractal mpi time = 6.98709511757 secs
+Pynamic: mpi test passed!
+
+Time: 0:44.48
+Cached
+Pynamic: Version 1.3.3
+Pynamic: run on 08/19/22 17:44:05 with 16384 MPI tasks
+
+Pynamic: driver beginning... now importing modules
+Pynamic: driver finished importing all modules... visiting all module functions
+Pynamic: module import time = 4.10016703606 secs
+Pynamic: module visit time = 0.147390127182 secs
+Pynamic: module test passed!
+
+Pynamic: testing mpi capability...
+
+Starting computation (groan)
+
+('Header length is ', 54)
+('BMP size is ', (400, 400))
+('Data length is ', 480000)
+
+Pynamic: fractal mpi time = 2.14595890045 secs
+Pynamic: mpi test passed!
+
+Time: 0:35.47

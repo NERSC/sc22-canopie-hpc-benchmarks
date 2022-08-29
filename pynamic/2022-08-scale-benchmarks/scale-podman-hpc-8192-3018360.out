@@ -1,0 +1,174 @@
+Doing srun
+Syncing nid004942
+Syncing nid005079
+Syncing nid005015
+Syncing nid005000
+Syncing nid005003
+Syncing nid005082
+Syncing nid004961
+Syncing nid004985
+Syncing nid004982
+Syncing nid004994
+Syncing nid004973
+Syncing nid005081
+Syncing nid005014
+Syncing nid005011
+Syncing nid004990
+Syncing nid005002
+Syncing nid004993
+Syncing nid005036
+Syncing nid005030
+Syncing nid005024
+Syncing nid004964
+Syncing nid005018
+Syncing nid004971
+Syncing nid004977
+Syncing nid005007
+Syncing nid005026
+Syncing nid004962
+Syncing nid005022
+Syncing nid005001
+Syncing nid004998
+Syncing nid005032
+Syncing nid005019
+Syncing nid004986
+Syncing nid004980
+Syncing nid005027
+Syncing nid004978
+Syncing nid004966
+Syncing nid004972
+Syncing nid004987
+Syncing nid005069
+Syncing nid004992
+Syncing nid005047
+Syncing nid005053
+Syncing nid004969
+Syncing nid004963
+Syncing nid005006
+Syncing nid005070
+Syncing nid004995
+Syncing nid005017
+Syncing nid005004
+Syncing nid005041
+Syncing nid004989
+Syncing nid004943
+Syncing nid005080
+Syncing nid005048
+Syncing nid005054
+Syncing nid004984
+Syncing nid005052
+Syncing nid005058
+Syncing nid005077
+Syncing nid005065
+Syncing nid004983
+Syncing nid004968
+Syncing nid005074
+Syncing nid005062
+Syncing nid004981
+Syncing nid005028
+Syncing nid005034
+Syncing nid005073
+Syncing nid005075
+Syncing nid005068
+Syncing nid005072
+Syncing nid005031
+Syncing nid005067
+Syncing nid004960
+Syncing nid005039
+Syncing nid005033
+Syncing nid005043
+Syncing nid005021
+Syncing nid005056
+Syncing nid005071
+Syncing nid005061
+Syncing nid005057
+Syncing nid005055
+Syncing nid005044
+Syncing nid005035
+Syncing nid004997
+Syncing nid005213
+Syncing nid005008
+Syncing nid005009
+Syncing nid005023
+Syncing nid004967
+Syncing nid004974
+Syncing nid005037
+Syncing nid005029
+Syncing nid004976
+Syncing nid005010
+Syncing nid004979
+Syncing nid004988
+Syncing nid005038
+Syncing nid004999
+Syncing nid005012
+Syncing nid004946
+Syncing nid005078
+Syncing nid004965
+Syncing nid005005
+Syncing nid005020
+Syncing nid005042
+Syncing nid004991
+Syncing nid005050
+Syncing nid005040
+Syncing nid005060
+Syncing nid004945
+Syncing nid005066
+Syncing nid005049
+Syncing nid005013
+Syncing nid005059
+Syncing nid005016
+Syncing nid005051
+Syncing nid005046
+Syncing nid005045
+Syncing nid005064
+Syncing nid005063
+Syncing nid005076
+Syncing nid004970
+Syncing nid004996
+Syncing nid004944
+Syncing nid004975
+Set PATH PATH=/tmp/16907_hpc/podman//bin:$PATH
+Podman
+Pynamic: Version 1.3.3
+Pynamic: run on 08/19/22 15:29:03 with 8192 MPI tasks
+
+Pynamic: driver beginning... now importing modules
+Pynamic: driver finished importing all modules... visiting all module functions
+Pynamic: module import time = 1.19613409042 secs
+Pynamic: module visit time = 0.235512018204 secs
+Pynamic: module test passed!
+
+Pynamic: testing mpi capability...
+
+Starting computation (groan)
+
+('Header length is ', 54)
+('BMP size is ', (400, 400))
+('Data length is ', 480000)
+
+Pynamic: fractal mpi time = 0.664515972137 secs
+Pynamic: mpi test passed!
+
+Time: 1:40.39
+Cached
+Pynamic: Version 1.3.3
+Pynamic: run on 08/19/22 15:31:08 with 8192 MPI tasks
+
+Pynamic: driver beginning... now importing modules
+Pynamic: driver finished importing all modules... visiting all module functions
+Pynamic: module import time = 2.05904603004 secs
+Pynamic: module visit time = 0.131814956665 secs
+Pynamic: module test passed!
+
+Pynamic: testing mpi capability...
+
+Starting computation (groan)
+
+('Header length is ', 54)
+('BMP size is ', (400, 400))
+('Data length is ', 480000)
+
+Pynamic: fractal mpi time = 1.00026488304 secs
+Pynamic: mpi test passed!
+
+Time: 2:06.17
