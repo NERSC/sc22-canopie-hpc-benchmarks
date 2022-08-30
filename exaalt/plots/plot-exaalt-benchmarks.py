@@ -30,7 +30,7 @@ print(nodeflatlist)
 
 frameworklist = []
 for m in range(neach):
-    frameworks = ["Baremetal","Shifter","Podman-container-per-process","Podman-exec-mode"]
+    frameworks = ["Bare-metal","Shifter","Podman-container-per-process","Podman-exec-mode"]
     frameworklist.append(frameworks)
 
 frameworkflatlist = [item for sublist in frameworklist for item in sublist]
@@ -100,10 +100,10 @@ plotdf = pd.concat([firstrundf, secondrundf])
 plotdf['Runtime'] = pd.to_timedelta(plotdf['Runtime'].astype(str)).dt.total_seconds()
 
 palette=dict()
-palette['Baremetal']='red'
+palette['Bare-metal']='red'
 palette['Shifter']='blue'
-palette['Podman-container-per-process']='gray'
-palette['Podman-exec-mode']='green'
+palette['Podman-container-per-process']='darkgreen'
+palette['Podman-exec-mode']='seagreen'
 
 plt.figure(figsize=(10,8))
 
@@ -121,7 +121,7 @@ g = sns.catplot(data=plotdf,
 
 g.set(ylim=(0,1200))
 g.fig.subplots_adjust(top=0.9)
-g.fig.suptitle('ExaALT Carbon ~1B Atoms')
+g.fig.suptitle('EXAALT Carbon ~1B Atoms')
 g.set_axis_labels("Nodes", "Runtime (s)")
 
 plt.legend()
