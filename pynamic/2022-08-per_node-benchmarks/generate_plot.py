@@ -56,6 +56,8 @@ if __name__ == "__main__":
         if line.startswith("RUN"):
             ele = line.replace("RUN:", "").rstrip().split(" - ")
             mode = ' '.join(ele[0:-1]).lstrip()
+            if mode == "Podman container per task":
+                mode = "Podman container per process"
             scale, rep = ele[-1].split(" ")
         elif line.find("import time") > 0:
             it = float(line.split(" ")[-2])
